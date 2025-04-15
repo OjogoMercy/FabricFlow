@@ -82,13 +82,11 @@ const SignIn = ({navigation}) => {
 }
 
 export default SignIn
-
 const styles = StyleSheet.create({
     inputcontainer:{
         height:60,
         width:330,
         marginTop:30
-        
     },
     input:{
         height:45,
