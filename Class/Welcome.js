@@ -6,7 +6,7 @@ import { useState } from 'react';
 import styles from './../const/Styles';
 import { StatusBar } from 'react-native';
 
-export default function Welcome  () {
+export default function Welcome  (navigation) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +16,7 @@ export default function Welcome  () {
     <View style={styles.Container}>
       <StatusBar backgroundColor={'black'}/>
       <Image source={logo} style={styles.logo}/>
-      <Text style={styles.header}>Sign in to FinPal</Text>
+      <Text style={styles.header}>Sign in to Finpal</Text>
  <View style={styles.con}>
     <Text style={styles.label}>Email Address</Text>
       <View style={styles.inputContainer}>
@@ -47,8 +47,8 @@ export default function Welcome  () {
         </TouchableOpacity>
       </View>  
       </View>
-      <View>
-      <TouchableOpacity style={styles.rememberContainer} onPress={() => setRemember(!remember)}>
+      <View style={styles.rememberContainer}>
+      <TouchableOpacity  onPress={() => setRemember(!remember)}>
         <MaterialIcons
           name={remember ? 'check-circle' : 'radio-button-unchecked'}
           size={20}
@@ -60,6 +60,13 @@ export default function Welcome  () {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttontext}>Sign In</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={[styles.button,{backgroundColor:'black'}]}>
+        <Text style={[styles.buttontext, {color:'#63A70A'}]}>Create New Account</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+      <Text style={styles.line}>Forgot Password</Text>
+      </TouchableOpacity>
+     
     </View>
   )
   }

@@ -9,12 +9,13 @@ Container:{
 logo:{
     height:70,
     width:70,
-    margin:20
+    marginTop:50
 },
 header:{
     color:'white',
     fontSize:23,
-    fontWeight:'bold'
+    fontWeight:'bold',
+    marginVertical:20
 },
 label: {
     color: '#fff',
@@ -26,9 +27,11 @@ label: {
     alignItems: 'center',
     backgroundColor: '#222',
     paddingHorizontal: 10,
-    borderRadius: 20,
+    borderRadius: 30,
     height: 50,
-    width:'100%'
+    width:'100%',
+    borderWidth:1,
+    borderColor:'#444'
   },
   input: {
     flex: 1,
@@ -40,12 +43,14 @@ label: {
   },
   rememberContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
     marginTop: 20,
+    marginLeft:-150,
+    marginBottom:30
   },
   rememberText: {
     color: '#fff',
     marginLeft: 10,
+    opacity:0.7
   },
   con:{
     width:'100%'
@@ -54,7 +59,24 @@ label: {
     width:'100%',
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor:'#63A70A'
+    backgroundColor:'#63A70A',
+    borderWidth:1,
+    borderColor:'#63A70A',
+    height:50,
+    margin:10,
+    borderRadius:30,
+    opacity:0.7
+  },
+  buttontext:{
+    color:'white',
+    fontWeight:'bold',
+    opacity:0.9,
+    fontSize:16
+  },
+  line:{
+    color:'#63a70a',
+    marginTop:30,
+    textDecorationLine:'underline'
   },
 
 });
