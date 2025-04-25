@@ -71,10 +71,10 @@ const Register = ({navigation}) => {
       </View>  
       </View>
       </ScrollView>
-      <TouchableOpacity style={[styles.button, {marginTop:30}]}  onPress={() => navigation.navigate('SignUp')}>
+      <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('SignUp')}>
         <Text style={styles.buttontext}>Create Account</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity style={{marginTop:-10}}>
       <Text style={styles.line}>I Already Have An Account</Text>
       </TouchableOpacity>
      

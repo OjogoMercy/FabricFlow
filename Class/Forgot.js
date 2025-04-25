@@ -6,7 +6,7 @@ import { useState } from 'react';
 import styles from './../const/Styles';
 import { StatusBar } from 'react-native';
 
-const Forgot = () => {
+const Forgot = ({navigation}) => {
   const [email, setEmail] = useState('');
   return (
     <View style={styles.Container}>
@@ -25,7 +25,7 @@ const Forgot = () => {
         />
     </View>
       </View>
-      <TouchableOpacity style={[styles.button, {marginTop:30}]}  onPress={() => navigation.navigate('SignUp')}>
+      <TouchableOpacity style={[styles.button, {marginTop:30}]}  onPress={() => navigation.navigate('Welcome')}>
         <Text style={styles.buttontext}>Continue</Text>
       </TouchableOpacity>
       <Text style={[styles.label,{marginTop:25}]}>Don't remember your email?</Text>
