@@ -31,7 +31,8 @@ label: {
     height: 50,
     width:'100%',
     borderWidth:1,
-    borderColor:'#444'
+    borderColor:'#444',
+    marginBottom:10
   },
   input: {
     flex: 1,
@@ -77,6 +78,12 @@ label: {
     color:'#63a70a',
     marginTop:30,
     textDecorationLine:'underline'
+  },
+  lin:{
+    width:'24%',
+    height:2,
+    backgroundColor:'#63a70a',
+    borderRadius:5
   },
 
 });

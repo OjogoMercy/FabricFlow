@@ -6,7 +6,7 @@ import { useState } from 'react';
 import styles from './../const/Styles';
 import { StatusBar } from 'react-native';
 
-export default function Welcome  (navigation) {
+export default function Welcome  ({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -57,13 +57,13 @@ export default function Welcome  (navigation) {
       </TouchableOpacity>
       <Text style={styles.rememberText}>Remember for 30 days</Text>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('SignIn')}>
         <Text style={styles.buttontext}>Sign In</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.button,{backgroundColor:'black'}]}>
+      <TouchableOpacity style={[styles.button,{backgroundColor:'black'}]}  onPress={() => navigation.navigate('Register')}>
         <Text style={[styles.buttontext, {color:'#63A70A'}]}>Create New Account</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
       <Text style={styles.line}>Forgot Password</Text>
       </TouchableOpacity>
      
