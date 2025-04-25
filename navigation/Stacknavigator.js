@@ -15,7 +15,7 @@ export default function StackNavigator() {
   return (
     <NavigationIndependentTree>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Index" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />
