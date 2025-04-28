@@ -8,6 +8,7 @@ import Index from './../Class/Index';
 import Register from './../Class/Register';
 import Forgot from './../Class/Forgot';
 import Welcome from './../Class/Welcome';
+import Whatsapp from './../Class/Whatsapp';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ export default function StackNavigator() {
   return (
     <NavigationIndependentTree>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Whatsapp" screenOptions={{headerShown: false}}>
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />
@@ -23,6 +24,7 @@ export default function StackNavigator() {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Forgot" component={Forgot} />
+        <Stack.Screen name="Whatsapp" component={Whatsapp} />
       </Stack.Navigator>
     </NavigationContainer>
     </NavigationIndependentTree>

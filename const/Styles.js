@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
+import Whatsapp from './../Class/Whatsapp';
 const styles = StyleSheet.create({
 Container:{
     backgroundColor:'black',
-    padding:20,
+    padding:15,
     flex:1,
-    alignItems:'center'
 },
 logo:{
     height:70,
@@ -85,6 +85,84 @@ label: {
     backgroundColor:'#63a70a',
     borderRadius:5
   },
+  Whatsapp:{
+    fontSize:25,
+    fontWeight:'bold',
+    color:'green',
+  },
+  lay:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    width:'35%'
+  },
+  top:{
+    justifyContent:'space-between',
+    width:'100%',
+    flexDirection:'row',
+    alignItems:'center',
+    marginBottom:20
+  },
+  tabButton:{
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 20,
+    marginHorizontal: 5,
+  },
+  activeTab:{
+    backgroundColor: '#ccffd9',
+  },
+  tabText:{
+    fontSize:16,
+    color:'black',
+  },
+  activetext:{
+    color:'black',
+    fontWeight:'bold',
+  },
+  chatContainer: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 10,
+    width: '100%',
+    flexDirection: 'row',    
+    alignItems: 'center', 
+  },
+  chatProfilePic: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 10,
+  },
+  chatContent: {            
+    flex: 1,    
+  },
+  chatHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  chatName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  chatTime: {
+    fontSize: 12,
+    color: 'gray',
+  },
+  chatBody: {
+    marginTop: 5,
+  },
+  chatMessage: {
+    fontSize: 13,
+    color: 'gray',
+  },
+  chatDate: {
+    fontSize: 12,
+    color: 'gray',
+  },
+  
 
 });
 export default styles

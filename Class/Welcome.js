@@ -66,7 +66,6 @@ export default function Welcome  ({navigation}) {
       <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
       <Text style={styles.line}>Forgot Password</Text>
       </TouchableOpacity>
-     
     </View>
   )
   }

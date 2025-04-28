@@ -77,7 +77,6 @@ const Register = ({navigation}) => {
       <TouchableOpacity style={{marginTop:-10}}>
       <Text style={styles.line}>I Already Have An Account</Text>
       </TouchableOpacity>
-     
     </View>
   )
 }
