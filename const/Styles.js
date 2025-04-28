@@ -113,7 +113,7 @@ label: {
     backgroundColor: '#ccffd9',
   },
   tabText:{
-    fontSize:16,
+    fontSize:14,
     color:'black',
   },
   activetext:{
@@ -123,7 +123,7 @@ label: {
   chatContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
-    padding: 10,
+    paddingVertical: 10,
     marginTop: 10,
     width: '100%',
     flexDirection: 'row',    
@@ -136,7 +136,7 @@ label: {
     marginRight: 10,
   },
   chatContent: {            
-    flex: 1,    
+    paddingHorizontal:5   
   },
   chatHeader: {
     flexDirection: 'row',
@@ -153,6 +153,11 @@ label: {
   },
   chatBody: {
     marginTop: 5,
+    flexDirection:'row',
+    width:'100%',
+    paddingHorizontal:5,
+    justifyContent:'space-between'
+   
   },
   chatMessage: {
     fontSize: 13,
@@ -161,6 +166,11 @@ label: {
   chatDate: {
     fontSize: 12,
     color: 'gray',
+  },
+  tag:{
+    color:'white',
+    fontSize:12,
+    textAlign:'center'
   },
   
 

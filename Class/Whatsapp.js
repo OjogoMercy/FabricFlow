@@ -21,6 +21,11 @@ const Whatsapp = () => {
         </View>
         <View style={styles.chatBody}>
           <Text style={styles.chatMessage}>{item.message}</Text>
+          {item.tag ? (  <View style={{backgroundColor:'green',width:20,borderRadius:10,justifyContent:'center',height:20}}>
+          <Text style={styles.tag}>{item.tag}</Text>
+          </View>) : null}
+        
+          
         </View>
       </View>
     </View>
