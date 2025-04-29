@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import Whatsapp from './../Class/Whatsapp';
+
 const styles = StyleSheet.create({
 Container:{
     backgroundColor:'black',
@@ -155,7 +155,6 @@ label: {
     marginTop: 5,
     flexDirection:'row',
     width:'100%',
-    paddingHorizontal:5,
     justifyContent:'space-between'
    
   },

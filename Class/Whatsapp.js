@@ -14,8 +14,10 @@ const Whatsapp = () => {
   const renderItem = ({ item }) => {
     return (
       <View style={styles.chatContainer}>
-      <Image source={{ uri: item.profilePic }} style={styles.chatProfilePic} />
-      <View style={{flex:1}}>
+        <TouchableOpacity>
+        <Image source={{ uri: item.profilePic }} style={styles.chatProfilePic} />
+        </TouchableOpacity>
+      <TouchableOpacity style={{flex:1}}>
         <View style={styles.chatHeader}>
           <Text style={styles.chatName}>{item.name}</Text>
           <Text style={styles.chatTime}>{item.time}</Text>
@@ -27,7 +29,7 @@ const Whatsapp = () => {
           </View>) : null}
           
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
     );
   };
@@ -61,7 +63,7 @@ const Whatsapp = () => {
       showsVerticalScrollIndicator={false}
       style={{marginTop:10}}
     /> 
-    <TouchableOpacity style={styles.float}>
+    <TouchableOpacity style={styles.float} activeOpacity={0.7}>
       <Image source={message} style={{height:25,width:25}}/>
     </TouchableOpacity>
     </View>
