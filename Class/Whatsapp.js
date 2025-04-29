@@ -5,6 +5,7 @@ import { useState } from 'react';
 import styles from './../const/Styles';
 import { StatusBar } from 'react-native';
 import ChatData from './../const/ChatData';
+import message from '../assets/images/icons8-add-chat-48.png'
 
 const Whatsapp = () => {
   const [active,setActive] = useState('All')
@@ -24,7 +25,6 @@ const Whatsapp = () => {
           {item.tag ? (  <View style={{backgroundColor:'green',width:20,borderRadius:10,justifyContent:'center',height:20}}>
           <Text style={styles.tag}>{item.tag}</Text>
           </View>) : null}
-        
           
         </View>
       </View>
@@ -33,6 +33,7 @@ const Whatsapp = () => {
   };
   return (
     <View style={[styles.Container, {backgroundColor:'white'}]}>
+      <StatusBar backgroundColor={'white'} barStyle={'dark-content'}/>
       <View style={styles.top}>
       <Text style={styles.Whatsapp}>Whatsapp</Text>
       <View style={styles.lay}>
@@ -60,6 +61,9 @@ const Whatsapp = () => {
       showsVerticalScrollIndicator={false}
       style={{marginTop:10}}
     /> 
+    <TouchableOpacity style={styles.float}>
+      <Image source={message} style={{height:25,width:25}}/>
+    </TouchableOpacity>
     </View>
   )
 }

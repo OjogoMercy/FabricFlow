@@ -172,6 +172,19 @@ label: {
     fontSize:12,
     textAlign:'center'
   },
+  float:{
+    backgroundColor:'green',
+    borderRadius:15,
+    height:55,
+    width:55,
+    position:'absolute',
+    bottom:20,
+    right:20,
+    alignItems:'center',
+    justifyContent:'center',
+    alignSelf:'flex-end'
+    
+  },
   
 
 });
