@@ -1,7 +1,7 @@
 const ChatData = [
     {
       id: 1,
-      name: "John Doe",
+      name: "Kevin Owens",
       time: "10:30 AM",
       date: "2025-04-28",
       message: "Hello! How are you today?",

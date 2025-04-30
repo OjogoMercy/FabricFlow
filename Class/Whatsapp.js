@@ -26,8 +26,7 @@ const Whatsapp = () => {
           <Text style={styles.chatMessage}>{item.message}</Text>
           {item.tag ? (  <View style={{backgroundColor:'green',width:20,borderRadius:10,justifyContent:'center',height:20}}>
           <Text style={styles.tag}>{item.tag}</Text>
-          </View>) : null}
-          
+          </View>) : null}         
         </View>
       </TouchableOpacity>
     </View>
@@ -61,8 +60,7 @@ const Whatsapp = () => {
       renderItem={renderItem}
       keyExtractor={(item) => item.id.toString()}
       showsVerticalScrollIndicator={false}
-      style={{marginTop:10}}
-    /> 
+      style={{marginTop:10}} /> 
     <TouchableOpacity style={styles.float} activeOpacity={0.7}>
       <Image source={message} style={{height:25,width:25}}/>
     </TouchableOpacity>
