@@ -80,7 +80,7 @@ const render =({item}) =>(
       </TouchableOpacity>
     </View>
     <Text style={{textAlign:'center',margin:10}} numberOfLines={2}>Woke up feeling like, like 'Fuck up the World','Fuck up the World'. I think I just might ,'Fuck up the World','Fuck up the World' </Text>
-    <Text style={{color:'gray',fontSize:14,marginHorizontal:10}}>View all comments...</Text>
+    <Text style={{color:'gray',fontSize:14,marginHorizontal:10,marginBottom:10}}>View all comments...</Text>
     </View>
 );
 
@@ -122,7 +122,7 @@ const render =({item}) =>(
                         renderItem={renderItems}
                         keyExtractor={(item) => item.id.toString()}
                         showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={{ marginVertical: 10, backgroundColor: '#f2f2f2' }} />
+                         />
                 </View>
             </View>
 
@@ -135,16 +135,16 @@ const render =({item}) =>(
                 ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#e0e0e0' }} />} />
         </ScrollView><View style={styles.last}>
                 <TouchableOpacity style={styles.co}>
-                    <FontAwesome name="home" size={24} color="black" />
+                    <FontAwesome name="home" size={25} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <MaterialIcons name="search" size={24} color="black" />
+                    <MaterialIcons name="search" size={25} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <FontAweso name="plus-square-o" size={22} color="black" />
+                    <FontAwesome name="plus-square-o" size={24} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <MaterialCommunityIcons name="movie-play-outline" size={22} color="black" />
+                    <MaterialCommunityIcons name="movie-play-outline" size={24} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
                     <Ionicons name="person-circle-outline" size={27} color="black" />
