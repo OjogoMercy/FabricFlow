@@ -141,10 +141,10 @@ const render =({item}) =>(
                     <MaterialIcons name="search" size={24} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <FontAwesome name="plus-square-o" size={22} color="black" />
+                    <FontAweso name="plus-square-o" size={22} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <FontAwesome name="credit-card" size={22} color="black" />
+                    <MaterialCommunityIcons name="movie-play-outline" size={22} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
                     <Ionicons name="person-circle-outline" size={27} color="black" />
