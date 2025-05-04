@@ -5,7 +5,7 @@ const ChatData = [
       time: "10:30 AM",
       date: "2025-04-28",
       message: "Hello! How are you today?",
-      profilePic: "https://img.freepik.com/free-photo/lady-looking-excited-happy-using-her-phone-carrying-handbag_181624-43869.jpg?t=st=1745845158~exp=1745848758~hmac=a013a1a92a1a8f8af49b0f0ab6347d270b8c0757a8ef96a10473e3370ca64203&w=740",
+      profilePic: "https://media.istockphoto.com/id/481686206/photo/boxing-power.jpg?s=1024x1024&w=is&k=20&c=oxeewaCbIfVUEFajRR8SCD52Cx63WkpwpBRxJkEgPJo=",
     },
     {
       id: 2,
@@ -14,7 +14,7 @@ const ChatData = [
       date: "2025-04-28",
       message: "Don't forget the meeting at noon.",
       tag:"2",
-      profilePic: "https://img.freepik.com/free-photo/medium-shot-man-holding-megaphone_23-2149220703.jpg?t=st=1745845234~exp=1745848834~hmac=27cbc98a8ead1b1c79ea7a809fd8285036d586b2c4a5d55e52febb4ae2f5c940&w=996",
+      profilePic: "https://media.istockphoto.com/id/1935676391/photo/boxer-training-hard.jpg?s=612x612&w=0&k=20&c=ctrJbQU3QsLKzPzzUAkMKm0eGoZdSozr9kGRJrDuC7c=",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const ChatData = [
       date: "2025-04-26",
       tag:"3",
       message: "Had a great time yesterday!",
-      profilePic: "https://img.freepik.com/free-photo/vertical-shot-happy-african-female-jumping-excitement_181624-30664.jpg?t=st=1745845318~exp=1745848918~hmac=0822062b667c4e758cc548918388c7f51edda02f9c9a09cc31d6ff1c984d42e0&w=740",
+      profilePic: "https://media.istockphoto.com/id/537840692/photo/boxer-training-with-a-punching-bag.jpg?s=612x612&w=0&k=20&c=BdTUeAW20bQQXPFHObmwlO_HS5Xz59WMI5k2Mu6d20g=",
     },
     {
       id: 5,

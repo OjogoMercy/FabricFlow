@@ -1,15 +1,17 @@
 import {Text, View ,ScrollView, TouchableOpacity,FlatList,Image,StyleSheet} from 'react-native'
 import React from 'react'
-import { MaterialIcons ,Feather,MaterialCommunityIcons,AntDesign,FontAwesome,Ionicons} from '@expo/vector-icons';
+import { MaterialIcons ,Feather,MaterialCommunityIcons,AntDesign,FontAwesome,Ionicons,Entypo} from '@expo/vector-icons';
 import { useState } from 'react';
 import { StatusBar} from 'react-native';
 import ChatData from './../const/ChatData';
 import instagram from '../assets/images/instagram.png'
 import { LinearGradient } from 'expo-linear-gradient';
+import play from '../assets/images/icons8-instagram-reels-50.png'
+import user from '../assets/images/icons8-male-user-32.png'
 
 
 const Instagram = () => {
-    const renderItem =({item}) =>(
+    const renderItem =({item, index}) =>(
         <View style={styles.flat}>
             <LinearGradient
   colors={['#ffd700', '#ff1493']}
@@ -17,8 +19,13 @@ const Instagram = () => {
   end={{ x: 1, y: 0 }}
   style={{ flex: 1, padding: 10,height:85,width:85,alignItems:'center',justifyContent:'center',borderRadius:50 }}
 >
-<TouchableOpacity style={styles.contain} activeOpacity={0.8}>
+<TouchableOpacity style={[styles.contain, index === 0 && {backgroundColor:"white"}]} activeOpacity={0.8}>
              <Image source={{uri:item.profilePic}} style={[styles.profile,{height:77,width:77,}]}/>
+             {index === 0 && (
+                <View style={styles.add}>
+                   <Ionicons name="add-circle" size={22} color="#3498db" />
+                </View>
+             )}
            </TouchableOpacity>
 </LinearGradient>
           
@@ -97,7 +104,7 @@ const render =({item}) =>(
                     <TouchableOpacity>
                         <AntDesign name='message1' size={24} color={'black'} style={{ alignSelf: "flex-end", marginLeft: 10 }} />
                     </TouchableOpacity>
-                    <View style={{ backgroundColor: 'red', height: 15, width: 15, borderRadius: 20, alignItems: 'center', justifyContent: 'center', right: -7, top: -5, position: 'absolute' }}><Text style={{ color: 'white', textAlign: 'center', fontSize: 10 }}>1</Text></View>
+                    <View style={{ backgroundColor: 'red', height: 15, width: 15, borderRadius: 20, alignItems: 'center', justifyContent: 'center', right: -7, top: -5, position: 'absolute' }}><Text style={{ color: 'white', textAlign: 'center', fontSize: 10 }}>6</Text></View>
                 </View>
 
             </View>
@@ -135,19 +142,19 @@ const render =({item}) =>(
                 ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#e0e0e0' }} />} />
         </ScrollView><View style={styles.last}>
                 <TouchableOpacity style={styles.co}>
-                    <FontAwesome name="home" size={25} color="black" />
+                    <Entypo name="home" size={25} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <MaterialIcons name="search" size={25} color="black" />
+                    <Feather name="search" size={25} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
                     <FontAwesome name="plus-square-o" size={24} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <MaterialCommunityIcons name="movie-play-outline" size={24} color="black" />
+                  <Image source={play} style={{height:25,width:25}}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
-                    <Ionicons name="person-circle-outline" size={27} color="black" />
+                <Image source={user} style={{height:27,width:27}}/>
                 </TouchableOpacity>
             </View></>
     )
@@ -285,5 +292,12 @@ width:'100%'
   },
   co:{
     alignItems:'center'
+  },
+  add:{
+    position: 'absolute',
+    bottom: -2,
+    right: -2,
+    backgroundColor: '#fff',
+    borderRadius: 10,
   },
 })
