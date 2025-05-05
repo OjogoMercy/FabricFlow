@@ -10,6 +10,7 @@ import Forgot from './../Class/Forgot';
 import Welcome from './../Class/Welcome';
 import Whatsapp from './../Class/Whatsapp';
 import Instagram from './../Class/Instagram';
+import Twitter from './../Class/Twitter';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ export default function StackNavigator() {
         <Stack.Screen name="Forgot" component={Forgot} />
         <Stack.Screen name="Whatsapp" component={Whatsapp} />
         <Stack.Screen name="Instagram" component={Instagram} />
+        <Stack.Screen name="Twitter" component={Twitter} />
       </Stack.Navigator>
     </NavigationContainer>
     </NavigationIndependentTree>

@@ -10,26 +10,41 @@ import play from '../assets/images/icons8-instagram-reels-50.png'
 import user from '../assets/images/icons8-male-user-32.png'
 
 
-const Instagram = () => {
+const Instagram = ({navigation}) => {
     const renderItem =({item, index}) =>(
         <View style={styles.flat}>
+          {
+            index === 0 ?
+            
+          <TouchableOpacity style={[styles.contain, index === 0 && {backgroundColor:"white"}]} activeOpacity={0.8}>
+                       <Image source={{uri:item.profilePic}} style={[styles.profile,{height:77,width:77,}]}/>
+                       {index === 0 && (
+                          <View style={styles.add}>
+                             <Ionicons name="add-circle" size={22} color="#3498db" />
+                          </View>
+                       )}
+                     </TouchableOpacity>
+            :
+
             <LinearGradient
-  colors={['#ffd700', '#ff1493']}
-  start={{ x: 0, y: 1 }}
-  end={{ x: 1, y: 0 }}
-  style={{ flex: 1, padding: 10,height:85,width:85,alignItems:'center',justifyContent:'center',borderRadius:50 }}
->
-<TouchableOpacity style={[styles.contain, index === 0 && {backgroundColor:"white"}]} activeOpacity={0.8}>
-             <Image source={{uri:item.profilePic}} style={[styles.profile,{height:77,width:77,}]}/>
-             {index === 0 && (
-                <View style={styles.add}>
-                   <Ionicons name="add-circle" size={22} color="#3498db" />
-                </View>
-             )}
-           </TouchableOpacity>
-</LinearGradient>
+            colors={['#ffd700', '#ff1493']}
+            start={{ x: 0, y: 1 }}
+            end={{ x: 1, y: 0 }}
+            style={{ flex: 1  ,height:95 ,width:85,alignItems:'center',justifyContent:'center',borderRadius:50 }}
+          >
+          <TouchableOpacity style={[styles.contain, index === 0 && {backgroundColor:"white"}]} activeOpacity={0.8}>
+                       <Image source={{uri:item.profilePic}} style={[styles.profile,{height:77,width:77,}]}/>
+                       {index === 0 && (
+                          <View style={styles.add}>
+                             <Ionicons name="add-circle" size={22} color="#3498db" />
+                          </View>
+                       )}
+                     </TouchableOpacity>
+          </LinearGradient>
+          }
+           {index === 0 ?  <Text style={{color:'gray',fontSize:12, textAlign:'center'}}>Your Story</Text> :
           
-           <Text style={styles.text}>{item.name}</Text>
+           <Text style={styles.text}>{item.name}</Text> } 
         </View>
     );
     const renderItems =({item}) =>(
@@ -40,7 +55,7 @@ const Instagram = () => {
            </TouchableOpacity>
            <View style={{paddingHorizontal:10,flexDirection:'row',alignItems:'center',alignSelf:'center'}}>
             <Text style={styles.text}>{item.name}</Text>
-           <AntDesign name='checkcircle' size={10} color={'blue'} style={{marginTop:7,marginLeft:5}}/>
+           <AntDesign name='checkcircle' size={10} color={'blue'} style={{marginLeft:5}}/>
            </View>
            <Text style={{color:'gray',fontSize:12,textAlign:'center'}}>Popular</Text>
              <TouchableOpacity style={styles.button}>
@@ -66,7 +81,7 @@ const render =({item}) =>(
       </TouchableOpacity>
       <MaterialIcons name="more-horiz" size={20} color="black" style={styles.menuIcon} />
     </View>
-    <Image source={{uri:item.profilePic}} style={{height:400,width:'100%',resizeMode:'contain'}}/>
+    <Image source={{uri:item.profilePic}} style={{height:300,width:'100%',resizeMode:'contain'}}/>
      <View style={styles.con}>
       <View style={styles.leftActions}>
         <TouchableOpacity style={styles.iconWithText}>
@@ -96,7 +111,7 @@ const render =({item}) =>(
             <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
             <View style={styles.row}>
                 <Image source={instagram} style={styles.logo} />
-                <AntDesign name='down' size={15} color={'black'} style={{ marginLeft: -130 }} />
+                {/* <AntDesign name='down' size={15} color={'black'} style={{ marginLeft: -130 }} /> */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <TouchableOpacity>
                         <Feather name='heart' size={24} color={'black'} />
@@ -108,14 +123,14 @@ const render =({item}) =>(
                 </View>
 
             </View>
-            <View>
+            <View style={{padding:0,  }}>
                 <FlatList
                     data={ChatData}
                     horizontal
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id.toString()}
                     showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={{ marginVertical: 10, }} />
+                    contentContainerStyle={{ marginVertical:0, }} />
             </View>
             <View style={{ backgroundColor: '#f2f2f2' }}>
                 <View style={{ flexDirection: 'row', padding: 10, justifyContent: 'space-between', backgroundColor: '#f2f2f2' }}>
@@ -132,7 +147,6 @@ const render =({item}) =>(
                          />
                 </View>
             </View>
-
             <FlatList
                 data={ChatData}
                 renderItem={render}
@@ -147,7 +161,7 @@ const render =({item}) =>(
                 <TouchableOpacity style={styles.co}>
                     <Feather name="search" size={25} color="black" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.co}>
+                <TouchableOpacity style={styles.co} onPress={() => navigation.navigate('Twitter')}>
                     <FontAwesome name="plus-square-o" size={24} color="black" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.co}>
@@ -295,8 +309,8 @@ width:'100%'
   },
   add:{
     position: 'absolute',
-    bottom: -2,
-    right: -2,
+    bottom: -1,
+    right: -1,
     backgroundColor: '#fff',
     borderRadius: 10,
   },
