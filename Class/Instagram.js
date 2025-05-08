@@ -27,10 +27,10 @@ const Instagram = ({navigation}) => {
             :
 
             <LinearGradient
-            colors={['#ffd700', '#ff1493']}
-            start={{ x: 0, y: 1 }}
+            colors={['#ffd700','#C13584','#ff1493','#F56040']}
+            start={{ x: 1, y: 1 }}
             end={{ x: 1, y: 0 }}
-            style={{ flex: 1  ,height:95 ,width:85,alignItems:'center',justifyContent:'center',borderRadius:50 }}
+            style={{ flex: 1  ,height:85 ,width:85,alignItems:'center',justifyContent:'center',borderRadius:50 }}
           >
           <TouchableOpacity style={[styles.contain, index === 0 && {backgroundColor:"white"}]} activeOpacity={0.8}>
                        <Image source={{uri:item.profilePic}} style={[styles.profile,{height:77,width:77,}]}/>
