@@ -1,6 +1,7 @@
-// screens/IntroScreen.js
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet ,Image } from 'react-native';
+import general from './General';
+import logo from '../../assets/images/fashion.png'
 
 export default function Splash ({ navigation }) {
   useEffect(() => {
@@ -12,22 +13,10 @@ export default function Splash ({ navigation }) {
   }, [navigation]);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Our App!</Text>
+    <View style={general.container}>
+     <Image source={logo} style={general.logo}/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#4A90E2',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-});
+
