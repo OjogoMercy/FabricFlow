@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet ,Image } from 'react-native';
+import { View, Text, StyleSheet ,Image, StatusBar } from 'react-native';
 import general from './General';
 import logo from '../../assets/images/fashion.png'
 
@@ -13,7 +13,8 @@ export default function Splash ({ navigation }) {
   }, [navigation]);
 
   return (
-    <View style={general.container}>
+    <View style={[general.container , {backgroundColor:'#C15F4D'}]}>
+      <StatusBar backgroundColor={'#C15F4D'}/>
      <Image source={logo} style={general.logo}/>
     </View>
   );

@@ -18,7 +18,7 @@ const IntroScreen = ({navigation}) => {
           <View style={{height:30,width:30,backgroundColor:'#E2725B',borderRadius:30}}/>
           <View style={{height:30,width:30,backgroundColor:'white',borderRadius:30}}/>
         </View>
-        <TouchableOpacity style={general.button} onPress={()=> navigation.navigate('Signup')}>
+        <TouchableOpacity style={general.button} onPress={()=> navigation.navigate('Signin')}>
           <Text style={general.buttontext}>Continue</Text>
         </TouchableOpacity>
       </View>

@@ -15,6 +15,7 @@ const general = StyleSheet.create({
     logo:{
         width:200,
         height:200,
+        resizeMode:'contain'
     },
     general:{
         justifyContent: 'center',
@@ -49,6 +50,23 @@ const general = StyleSheet.create({
       buttontext:{
         textAlign:'center',
         color:'white'           
+      },
+      input: {
+        height: 45,
+        backgroundColor:'#ddd',
+        paddingHorizontal: 10,
+        borderRadius: 10,
+        width:'100%',
+        marginTop:8   
+      },
+      inputcontainer:{
+        padding:10,
+        width:'95%'
+      },
+      google:{
+        height:30,
+        width:30,
+        borderRadius:30 
       },
   });
 

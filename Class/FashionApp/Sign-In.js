@@ -1,11 +1,50 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View ,StatusBar, TextInput,SafeAreaView,Image, TouchableOpacity} from 'react-native'
 import React from 'react'
+import general from './General'
 
-const Signin = () => {
+const Signin = ({navigation}) => {
   return (
-    <View>
-      <Text>Sign-In</Text>
-    </View>
+    <SafeAreaView style={general.container}>
+      <StatusBar backgroundColor={'white'} barStyle={'dark-content'}/>
+      <Text style={general.down}>Sign In</Text>
+      <View style={general.inputcontainer}>
+        <Text>Full Name</Text>
+        <TextInput
+        style={general.input}
+        placeholder='Enter your Name'
+        placeholderTextColor={'gray'}
+        />
+      </View>
+      <View style={general.inputcontainer}>
+        <Text>Email</Text>
+        <TextInput
+        style={general.input}
+        placeholder='Enter your Email'
+        placeholderTextColor={'gray'}
+        />
+      </View>
+      <View style={general.inputcontainer}>
+        <Text>Password</Text>
+        <TextInput
+        style={general.input}
+        placeholder='Enter your Password'
+        placeholderTextColor={'gray'}
+        />
+      </View>
+      <View style={{flexDirection:'row',width:'100%',alignItems:'center',justifyContent:'center',marginTop:10}}>
+        <View style={{height:1,width:'35%',backgroundColor:'black'}}/>
+        <Text style={{fontSize:15}}>  OR  </Text>
+        <View style={{height:1,width:'35%',backgroundColor:'black'}}/>
+      </View>
+        <View style={{flexDirection:'row', width:'35%',justifyContent:'space-between',margin:10 }}>
+          <Image source={{uri:'https://img.icons8.com/?size=48&id=17949&format=png'}} style={general.google}/>
+          <Image source={{uri:'https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png'}} style={general.google}/>
+        </View>
+        <TouchableOpacity style={[general.button , {width:'90%',height:45,position:'absolute',bottom:50}]} onPress={() => navigation.navigate('Signup')}>
+          <Text style={[general.buttontext, {fontWeight:'bold'}]}>Sign In</Text>
+        </TouchableOpacity>
+        <Text style={{textAlign:'center',position:'absolute',bottom:20}}>Dont have an Account? <Text style={{color:'#803A32',fontWeight:'bold'}}>Sign Up</Text></Text>
+    </SafeAreaView>
   )
 }
 
