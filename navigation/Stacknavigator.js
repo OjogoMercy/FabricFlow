@@ -11,6 +11,13 @@ import Welcome from './../Class/Welcome';
 import Whatsapp from './../Class/Whatsapp';
 import Instagram from './../Class/Instagram';
 import Twitter from './../Class/Twitter';
+import Succesful from './../Class/FashionApp/Succesful';
+import Signin from './../Class/FashionApp/Sign-In';
+import Signup from './../Class/FashionApp/Sign-Up';
+import Splash from './../Class/FashionApp/Splash';
+import Verification from './../Class/FashionApp/Verification';
+import IntroScreen from './../Class/FashionApp/IntroScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +35,12 @@ export default function StackNavigator() {
         <Stack.Screen name="Forgot" component={Forgot} />
         <Stack.Screen name="Whatsapp" component={Whatsapp} />
         <Stack.Screen name="Instagram" component={Instagram} />
+        <Stack.Screen name="Succesful" component={Succesful} />
+        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="Verification" component={Verification} />
+        <Stack.Screen name="IntroScreen" component={IntroScreen} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Signin" component={Signin} />
         <Stack.Screen name="Twitter" component={Twitter} />
       </Stack.Navigator>
     </NavigationContainer>
