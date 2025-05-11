@@ -35,12 +35,14 @@ export default function StackNavigator() {
         <Stack.Screen name="Forgot" component={Forgot} />
         <Stack.Screen name="Whatsapp" component={Whatsapp} />
         <Stack.Screen name="Instagram" component={Instagram} />
+        {/* Fashion App */}
         <Stack.Screen name="Succesful" component={Succesful} />
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Verification" component={Verification} />
         <Stack.Screen name="IntroScreen" component={IntroScreen} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Signin" component={Signin} />
+        {/* Fashion App */}
         <Stack.Screen name="Twitter" component={Twitter} />
       </Stack.Navigator>
     </NavigationContainer>
