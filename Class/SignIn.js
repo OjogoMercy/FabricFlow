@@ -6,6 +6,8 @@ import facebook from '../assets/images/facebook.png'
 import apple from '../assets/images/apple.png'
 import { StatusBar } from 'react-native';
 
+
+
 const SignIn = ({navigation}) => {
     const [showPassword, setShowPassword] = useState(false);
     const [tick, setTick] = useState(false);
@@ -83,46 +85,46 @@ const SignIn = ({navigation}) => {
 
 export default SignIn
 const styles = StyleSheet.create({
-    inputcontainer:{
-        height:60,
-        width:330,
-        marginTop:30
-    },
-    input:{
-        height:45,
-        borderColor:'#999',
-        borderWidth:2,
-        borderRadius:10,
-    },
-    button:{
-        backgroundColor:'red',
-        width:'100%',
-        height:50,
-        alignItems:'center',
-        justifyContent:'center',
-        borderRadius:15,
-        elevation:9,
-        marginTop:20
-    },
-    box:{
-        flexDirection:'row',
-        height:45,
-        borderColor:'#999',
-        borderWidth:2,
-        borderRadius:10,
-        width:'100%',
-        marginTop:20,
-        alignItems:'center',
-    },
-    image:{
-        height:25,
-        width:25,
-        margin:20,
-        resizeMode:'contain'
-    },
-    text:{
-        marginLeft:50,
-        fontWeight:'bold',
-        fontSize:16
-    },
+  inputcontainer:{
+      height:60,
+      width:330,
+      marginTop:30
+  },
+  input:{
+      height:45,
+      borderColor:'#999',
+      borderWidth:2,
+      borderRadius:10,
+  },
+  button:{
+      backgroundColor:'red',
+      width:'100%',
+      height:50,
+      alignItems:'center',
+      justifyContent:'center',
+      borderRadius:15,
+      elevation:9,
+      marginTop:20
+  },
+  box:{
+      flexDirection:'row',
+      height:45,
+      borderColor:'#999',
+      borderWidth:2,
+      borderRadius:10,
+      width:'100%',
+      marginTop:20,
+      alignItems:'center',
+  },
+  image:{
+      height:25,
+      width:25,
+      margin:20,
+      resizeMode:'contain'
+  },
+  text:{
+      marginLeft:50,
+      fontWeight:'bold',
+      fontSize:16
+  },
 })

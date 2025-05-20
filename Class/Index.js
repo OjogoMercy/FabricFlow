@@ -1,6 +1,6 @@
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import React from 'react';
-import Data from '../const/Database';
+import Data from '../constants/Database';
 
 const Index = () => {
   return (

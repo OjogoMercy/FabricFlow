@@ -3,7 +3,7 @@ import React from 'react'
 import { MaterialIcons ,Feather,MaterialCommunityIcons,AntDesign,FontAwesome,Ionicons,Entypo} from '@expo/vector-icons';
 import { useState } from 'react';
 import { StatusBar} from 'react-native';
-import ChatData from './../const/ChatData';
+import ChatData from '../constants/ChatData';
 import instagram from '../assets/images/instagram.png'
 import { LinearGradient } from 'expo-linear-gradient';
 import play from '../assets/images/icons8-instagram-reels-50.png'
@@ -11,11 +11,26 @@ import user from '../assets/images/icons8-male-user-32.png'
 
 
 const Instagram = ({navigation}) => {
+  const header =() =>{
+    return(
+      <View style={styles.row}>
+                <Image source={instagram} style={styles.logo} />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <TouchableOpacity>
+                        <Feather name='heart' size={24} color={'black'} />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <AntDesign name='message1' size={24} color={'black'} style={{ alignSelf: "flex-end", marginLeft: 10 }} />
+                    </TouchableOpacity>
+                    <View style={{ backgroundColor: 'red', height: 15, width: 15, borderRadius: 20, alignItems: 'center', justifyContent: 'center', right: -7, top: -5, position: 'absolute' }}><Text style={{ color: 'white', textAlign: 'center', fontSize: 10 }}>6</Text></View>
+                </View>
+            </View>
+    )
+  }
     const renderItem =({item, index}) =>(
         <View style={styles.flat}>
           {
-            index === 0 ?
-            
+            index === 0 ?  
           <TouchableOpacity style={[styles.contain, index === 0 && {backgroundColor:"white"}]} activeOpacity={0.8}>
                        <Image source={{uri:item.profilePic}} style={[styles.profile,{height:77,width:77,}]}/>
                        {index === 0 && (
@@ -109,24 +124,12 @@ const render =({item}) =>(
     return(
         <><ScrollView style={styles.Container}>
             <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
-            <View style={styles.row}>
-                <Image source={instagram} style={styles.logo} />
-                {/* <AntDesign name='down' size={15} color={'black'} style={{ marginLeft: -130 }} /> */}
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <TouchableOpacity>
-                        <Feather name='heart' size={24} color={'black'} />
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <AntDesign name='message1' size={24} color={'black'} style={{ alignSelf: "flex-end", marginLeft: 10 }} />
-                    </TouchableOpacity>
-                    <View style={{ backgroundColor: 'red', height: 15, width: 15, borderRadius: 20, alignItems: 'center', justifyContent: 'center', right: -7, top: -5, position: 'absolute' }}><Text style={{ color: 'white', textAlign: 'center', fontSize: 10 }}>6</Text></View>
-                </View>
-
-            </View>
+            
             <View style={{padding:0,  }}>
                 <FlatList
                     data={ChatData}
                     horizontal
+                    ListHeaderComponent={header}
                     renderItem={renderItem}
                     keyExtractor={(item) => item.id.toString()}
                     showsHorizontalScrollIndicator={false}

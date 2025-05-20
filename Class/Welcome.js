@@ -3,7 +3,7 @@ import React from 'react'
 import logo from '../assets/images/icons8-money-30 (1).png'
 import { MaterialIcons } from '@expo/vector-icons';
 import { useState } from 'react';
-import styles from './../const/Styles';
+import styles from '../constants/Styles';
 import { StatusBar } from 'react-native';
 
 export default function Welcome  ({navigation}) {
