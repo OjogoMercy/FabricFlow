@@ -4,39 +4,44 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import Carts from './Carts';
+import Favourites from './Favourites';
+import Profile from './Profile';
+import Homescreen from './Homescreen';
+import Colors from './Components/Colors';
 
 const Tab = createBottomTabNavigator();
-
-function Screen({ title }) {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>{title}</Text>
-    </View>
-  );
-}
-
 export default function App() {
   return (   
       <Tab.Navigator
+      
         screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size }) => {
+          headerShown : false,
+          tabBarIcon: ({ color, size ,focused}) => {
             let iconName;
 
             if (route.name === 'Home') iconName = 'home';
-            else if (route.name === 'Profile') iconName = 'person';
-            else if (route.name === 'Notifications') iconName = 'notifications';
-            else if (route.name === 'Settings') iconName = 'settings';
+            else if (route.name === 'Profile') iconName = 'person-outline';
+            else if (route.name === 'Carts') iconName = 'briefcase-outline';
+            else if (route.name === 'Favourites') iconName = 'heart';
 
-            return <Ionicons name={iconName} size={size} color={color} />;
+              const IconSize = focused ? 25: 20
+
+            return <Ionicons name={iconName} size={IconSize} color={color} />;
           },
-          tabBarActiveTintColor: '#007bff',
+          tabBarActiveTintColor: Colors.primary,
           tabBarInactiveTintColor: 'gray',
-        })}
+          tabBarShowLabel: false,
+          tabBarStyle:{ 
+             borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+          },
+        })}   
       >
-        <Tab.Screen name="Home" children={() => <Screen title="Home Screen" />} />
-        <Tab.Screen name="Profile" children={() => <Screen title="Profile Screen" />} />
-        <Tab.Screen name="Notifications" children={() => <Screen title="Notifications Screen" />} />
-        <Tab.Screen name="Settings" children={() => <Screen title="Settings Screen" />} />
+        <Tab.Screen name="Home" component={Homescreen}/>
+        <Tab.Screen name="Carts" component={Carts}/>
+        <Tab.Screen name="Favourites" component={Favourites}/>
+        <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
   );
 }

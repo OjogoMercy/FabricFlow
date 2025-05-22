@@ -1,4 +1,5 @@
 import  { StyleSheet } from 'react-native';
+import Colors from './Colors';
 
 const general = StyleSheet.create({
     container: {
@@ -32,7 +33,7 @@ const general = StyleSheet.create({
       down:{
         fontSize:30,
         fontWeight:'bold',
-        color:'#E2725B',
+        color:Colors.primary,
         marginBottom:15 
       },
       text:{
@@ -41,7 +42,7 @@ const general = StyleSheet.create({
         marginBottom:5
       },
       button:{
-        backgroundColor:'#E2725B',
+        backgroundColor:Colors.primary,
         width:'35%',
         justifyContent:'center',
         borderRadius:20,

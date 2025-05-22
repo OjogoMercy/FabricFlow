@@ -1,7 +1,7 @@
 import {Text, View ,StatusBar, TextInput,SafeAreaView,Image, TouchableOpacity} from 'react-native'
 import React from 'react'
-import general from './General'
-import Button from './Button'
+import general from './Components/General'
+import Button from './Components/Button'
 
 const Signup = ({navigation}) => {
   return (

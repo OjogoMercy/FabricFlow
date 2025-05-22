@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ImageBackground,StatusBar, TouchableOpacity } from 'react-native'
 import React from 'react'
-import general from './General'
+import general from './Components/General'
 
 const IntroScreen = ({navigation}) => {
   return (

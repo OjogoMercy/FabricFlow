@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet ,Image, StatusBar } from 'react-native';
-import general from './General';
+import general from './Components/General';
 import logo from '../../assets/images/fashion.png'
 
 export default function Splash ({ navigation }) {
