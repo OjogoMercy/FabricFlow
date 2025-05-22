@@ -1,6 +1,7 @@
 import {Text, View ,StatusBar, TextInput,SafeAreaView,Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import general from './General'
+import Button from './Button'
 
 const Signup = ({navigation}) => {
   return (
@@ -32,10 +33,7 @@ const Signup = ({navigation}) => {
         />
       </View>
       </View>
-     
-      <TouchableOpacity style={[general.button , {width:'90%',height:45,marginVertical:30,position:'absolute',bottom:30}]} onPress={() => navigation.navigate('Verification')}>
-          <Text style={[general.buttontext, {fontWeight:'bold'}]}>Sign Up</Text>
-        </TouchableOpacity>
+      <Button title="Sign Up" onPress={() => navigation.navigate("Verification")}/>
     </SafeAreaView>
   )
 }

@@ -16,8 +16,7 @@ function Screen({ title }) {
 }
 
 export default function App() {
-  return (
-    <NavigationContainer>
+  return (   
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
@@ -39,6 +38,5 @@ export default function App() {
         <Tab.Screen name="Notifications" children={() => <Screen title="Notifications Screen" />} />
         <Tab.Screen name="Settings" children={() => <Screen title="Settings Screen" />} />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }

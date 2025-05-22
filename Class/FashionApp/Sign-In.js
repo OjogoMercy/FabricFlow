@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View ,StatusBar, TextInput,SafeAreaView,Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import general from './General'
+import Button from './Button'
 
 const Signin = ({navigation}) => {
   return (
@@ -40,9 +41,7 @@ const Signin = ({navigation}) => {
           <Image source={{uri:'https://img.icons8.com/?size=48&id=17949&format=png'}} style={general.google}/>
           <Image source={{uri:'https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png'}} style={general.google}/>
         </View>
-        <TouchableOpacity style={[general.button , {width:'90%',height:45,position:'absolute',bottom:50}]} onPress={() => navigation.navigate('Signup')}>
-          <Text style={[general.buttontext, {fontWeight:'bold'}]}>Sign In</Text>
-        </TouchableOpacity>
+        <Button title="Sign In" onPress={() => navigation.navigate("Signup")}/>
         <Text style={{textAlign:'center',position:'absolute',bottom:20}}>Dont have an Account? <Text style={{color:'#803A32',fontWeight:'bold'}}>Sign Up</Text></Text>
     </SafeAreaView>
   )
