@@ -35,6 +35,7 @@ export default function App() {
           tabBarStyle:{ 
              borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
+            backgroundColor:'white'
           },
         })}   
       >

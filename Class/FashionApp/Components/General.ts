@@ -26,7 +26,7 @@ const general = StyleSheet.create({
     overlay: {
         ...StyleSheet.absoluteFillObject, 
         backgroundColor: 'black', 
-        opacity:0.6,
+        opacity:0.7,
         justifyContent:'flex-end',
         padding:10
       },
@@ -69,6 +69,31 @@ const general = StyleSheet.create({
         width:30,
         borderRadius:30 
       },
+      row:{justifyContent:'space-between',
+      width:'100%',
+      flexDirection:'row',
+      padding:20,
+      position:'absolute',
+      top:20
+    },
+    search:{
+      backgroundColor:'#ccc',
+      width:'100%',
+      height:40,
+      flexDirection:'row',
+      borderRadius:20,
+      alignItems:'center',
+      justifyContent:'center'
+    },
+    display:{
+      backgroundColor:Colors.primary,
+      height:180,
+      borderRadius:20,
+      width:'100%',
+      marginVertical:20,
+      padding:20,
+      flexDirection:'row'
+    },
   });
 
   export default general 

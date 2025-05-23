@@ -9,7 +9,7 @@ const Succesful = ({navigation}) => {
        <StatusBar backgroundColor={'white'} barStyle={'dark-content'}/>
       <Image source={logo} style={{resizeMode:'contain',marginVertical:30}}/>
       <Text style={{faaaontSize:20,fontWeight:'bold',marginVertical:10}}>Succesfully Registered </Text>
-      <Text style={{textAlign:'center',opacity:0.5,margin:5}}>Congratulations, your account has been registered in this application</Text>
+      <Text style={{textAlign:'center',opacity:0.5,marginHorizontal:25}}>Congratulations, your account has been registered in this application</Text>
       <Button title="Thank You" onPress={() => navigation.navigate("Bottomtab")}/>
     </SafeAreaView>
   )

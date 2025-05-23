@@ -10,7 +10,7 @@ const IntroScreen = ({navigation}) => {
   >
       <View style={general.overlay}>
         <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} translucent/>
-      <Text style={general.down}>Home Of Fashion</Text>
+      <Text style={[general.down, {fontSize:33}]}>Home Of Fashion</Text>
       <Text style={general.text}>Looking for the best deals in terms of fashion without maxing out your credit card?  Look no further.</Text>
       <View style={{flexDirection:'row',justifyContent:'space-between',width:'100%',marginTop:10}}>
         <View style={{flexDirection:'row',justifyContent:'space-between',width:'30%'}}>
