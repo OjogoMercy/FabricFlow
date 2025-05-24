@@ -7,6 +7,12 @@ const general = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+      paddingVertical:10
+    },
+    container1: {
+      flex: 1,
+      backgroundColor: '#fff',
+      padding: 10,
     },
     title: {
       color: '#fff',
@@ -73,8 +79,6 @@ const general = StyleSheet.create({
       width:'100%',
       flexDirection:'row',
       padding:20,
-      position:'absolute',
-      top:20
     },
     search:{
       backgroundColor:'#ccc',
@@ -93,6 +97,46 @@ const general = StyleSheet.create({
       marginVertical:20,
       padding:20,
       flexDirection:'row'
+    },
+    tabText:{
+      // backgroundColor:'gray',
+    },
+    tabButton:{
+      paddingHorizontal: 15,
+      paddingVertical: 7,
+      backgroundColor: '#f0f0f0',
+      borderRadius: 25,
+      marginHorizontal: 10,
+    },
+    activeTab:{
+      backgroundColor:Colors.primary,
+      borderRadius:25
+    },
+    activeText:{
+      color:'white',
+      fontWeight:'bold'
+    },
+    card: {
+      backgroundColor: '#fff',
+      padding: 15,
+      marginBottom: 15,
+      borderRadius: 10,
+      elevation: 3,
+      flexGrow:1
+    },
+    image: {
+      width: '100%',
+      height: 180,
+      borderRadius: 10,
+      marginBottom: 10,
+    },
+    name: {
+      fontWeight: 'bold',
+      fontSize: 16,
+    },
+    description: {
+      color: '#555',
+      marginTop: 5,
     },
   });
 
