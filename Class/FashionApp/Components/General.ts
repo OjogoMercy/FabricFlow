@@ -122,13 +122,14 @@ const general = StyleSheet.create({
       marginBottom: 15,
       borderRadius: 10,
       elevation: 3,
-      flexGrow:1
+      width:150
     },
     image: {
       width: '100%',
       height: 180,
       borderRadius: 10,
       marginBottom: 10,
+      resizeMode:'contain'
     },
     name: {
       fontWeight: 'bold',

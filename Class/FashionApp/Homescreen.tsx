@@ -65,7 +65,6 @@ const Homescreen = () => {
         renderItem={renderItem}
         contentContainerStyle={{
           paddingHorizontal: 10,
-          // paddingBottom: 100, 
         }}
         showsVerticalScrollIndicator={false}
       />
