@@ -118,26 +118,38 @@ const general = StyleSheet.create({
     },
     card: {
       backgroundColor: '#fff',
-      padding: 15,
+      paddingHorizontal: 10,
       marginBottom: 15,
       borderRadius: 10,
-      elevation: 3,
-      width:150
+      width:130,
+      height:200
     },
     image: {
       width: '100%',
-      height: 180,
-      borderRadius: 10,
+      height:130,
+      borderRadius: 15,
       marginBottom: 10,
       resizeMode:'contain'
     },
     name: {
       fontWeight: 'bold',
-      fontSize: 16,
+      fontSize: 13,
     },
     description: {
       color: '#555',
       marginTop: 5,
+      // fontSize:10
+    },
+    float:{
+     height:35,
+     width:35,
+     borderRadius:25,
+     backgroundColor:'white',
+     position:'absolute',
+     top:10,
+     right:10,
+     justifyContent:'center',
+     alignItems:'center'
     },
   });
 

@@ -14,8 +14,9 @@ const Homescreen = () => {
   const renderItem = ({ item }) => (
     <View style={general.card}>
       <Image source={{ uri: item.imageUrl }} style={general.image} />
+      <View style={general.float}> <Ionicons name='heart' color={Colors.primary} size={20}/></View>
       <Text style={general.name}>{item.name}</Text>
-      <Text style={general.description}>{item.description}</Text>
+  
     </View>
   );
 
