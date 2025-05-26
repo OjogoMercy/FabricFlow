@@ -18,6 +18,7 @@ import Splash from './../Class/FashionApp/Splash';
 import Verification from './../Class/FashionApp/Verification';
 import IntroScreen from './../Class/FashionApp/IntroScreen';
 import Bottomtab from './../Class/FashionApp/Bottomtab'
+import Details from '@/Class/FashionApp/Details';
 
 
 const Stack = createNativeStackNavigator();
@@ -44,6 +45,7 @@ export default function StackNavigator() {
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Signin" component={Signin} />
         <Stack.Screen name="Bottomtab" component={Bottomtab} />
+        <Stack.Screen name="Details" component={Details} />
         {/* Fashion App */}
         <Stack.Screen name="Twitter" component={Twitter} />
       </Stack.Navigator>

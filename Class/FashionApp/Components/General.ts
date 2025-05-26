@@ -87,14 +87,14 @@ const general = StyleSheet.create({
       flexDirection:'row',
       borderRadius:20,
       alignItems:'center',
-      justifyContent:'center'
+      justifyContent:'center',
+      marginBottom:10
     },
     display:{
       backgroundColor:Colors.primary,
       height:180,
       borderRadius:20,
       width:'100%',
-      marginVertical:20,
       padding:20,
       flexDirection:'row'
     },
@@ -118,38 +118,42 @@ const general = StyleSheet.create({
     },
     card: {
       backgroundColor: '#fff',
-      paddingHorizontal: 10,
       marginBottom: 15,
       borderRadius: 10,
-      width:130,
-      height:200
+      width:120,
+      height:230,
+      elevation:1
     },
     image: {
       width: '100%',
       height:130,
-      borderRadius: 15,
+      borderRadius: 20,
       marginBottom: 10,
-      resizeMode:'contain'
+      resizeMode:'stretch'
     },
     name: {
       fontWeight: 'bold',
-      fontSize: 13,
+      fontSize: 11,
     },
     description: {
       color: '#555',
       marginTop: 5,
-      // fontSize:10
     },
     float:{
-     height:35,
-     width:35,
+     height:30,
+     width:30,
      borderRadius:25,
      backgroundColor:'white',
      position:'absolute',
      top:10,
-     right:10,
+     right:5,
      justifyContent:'center',
-     alignItems:'center'
+     alignItems:'center',
+     elevation:3
+    },
+    con:{
+      marginVertical:20,
+      padding:20,
     },
   });
 
