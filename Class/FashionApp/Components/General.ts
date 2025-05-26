@@ -120,7 +120,7 @@ const general = StyleSheet.create({
       backgroundColor: '#fff',
       marginBottom: 15,
       borderRadius: 10,
-      width:120,
+      width:130,
       height:230,
       elevation:1
     },

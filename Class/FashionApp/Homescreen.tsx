@@ -7,13 +7,13 @@ import jacket from './Components/jacket.png'
 import { useState } from 'react'
 import Clothes from './Components/Clothing'
 
-const Homescreen = () => {
+const Homescreen = ({navigation}) => {
   const [active,setActive] = useState('All')
   const tabs = ['All','Men','Women','Kids'];
 
   const renderItem = ({ item }) => (
     <View style={general.con}>
-      <TouchableOpacity activeOpacity={0.7} style={general.card}>
+      <TouchableOpacity activeOpacity={0.7} style={general.card} onPress={() => navigation.navigate('Details', {item})} >
       <Image source={{ uri: item.imageUrl }} style={general.image} />
       <View style={general.float}> <Ionicons name='heart' color={Colors.primary} size={20}/></View>
       <View style={{paddingHorizontal:5,}}>
