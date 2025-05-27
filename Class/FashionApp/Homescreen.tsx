@@ -9,7 +9,7 @@ import Clothes from './Components/Clothing'
 
 const Homescreen = ({navigation}) => {
   const [active,setActive] = useState('All')
-  const tabs = ['All','Men','Women','Kids'];
+  const tabs = ['All','Men','Women','Kids',];
 
   const renderItem = ({ item }) => (
     <View style={general.con}>
@@ -84,7 +84,7 @@ const Homescreen = ({navigation}) => {
         data={Clothes}
         renderItem={renderItem}
         contentContainerStyle={{
-          paddingVertical: 20,
+          paddingVertical: 0,
         }}
         numColumns={2}
         showsVerticalScrollIndicator={false}

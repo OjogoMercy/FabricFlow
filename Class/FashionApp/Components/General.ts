@@ -56,7 +56,9 @@ const general = StyleSheet.create({
       },
       buttontext:{
         textAlign:'center',
-        color:'white'           
+        color:'white' ,
+        fontWeight:'bold',
+        fontSize:15          
       },
       input: {
         height: 45,
@@ -118,11 +120,10 @@ const general = StyleSheet.create({
     },
     card: {
       backgroundColor: '#fff',
-      marginBottom: 15,
       borderRadius: 10,
       width:130,
-      height:230,
-      elevation:1
+      height:220,
+      elevation:3
     },
     image: {
       width: '100%',
@@ -155,6 +156,57 @@ const general = StyleSheet.create({
       marginVertical:20,
       padding:20,
     },
+    cover:{ 
+      width: '100%',
+       height:'50%',
+       borderBottomRightRadius:20,
+       borderBottomLeftRadius:20,
+       },
+       float1:{
+        height:30,
+        width:30,
+        borderRadius:25,
+        backgroundColor:'white',
+        justifyContent:'center',
+        alignItems:'center',
+        elevation:3
+       },
+       high:{
+        flexDirection: "row",
+         position: 'absolute', 
+         top: 40,
+        left: 0,
+         right: 0, 
+        justifyContent: 'space-between',
+         paddingHorizontal: 10,
+        alignItems:'center' 
+       },
+       contain: {
+        alignItems: 'center',
+      },
+      starsRow: {
+        flexDirection: 'row',
+        marginBottom: 5,
+        gap:5
+      },
+      reviewText: {
+        fontSize: 14,
+        color: 'gray',
+        fontWeight: '500',
+      },
+      tabBox: {
+        backgroundColor: '#ddd',
+        paddingVertical: 10,
+        paddingHorizontal: 13,
+        borderRadius: 6,
+      },
+      activeBox: {
+        backgroundColor: '#C23D3D',
+      },
+      bigtext:{fontSize:18,
+        fontWeight:'bold',
+        marginTop:10
+      },
   });
 
   export default general 

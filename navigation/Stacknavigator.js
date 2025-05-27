@@ -45,7 +45,7 @@ export default function StackNavigator() {
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Signin" component={Signin} />
         <Stack.Screen name="Bottomtab" component={Bottomtab} />
-        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Details" component={Details}  options={{ unmountOnBlur: true }}/>
         {/* Fashion App */}
         <Stack.Screen name="Twitter" component={Twitter} />
       </Stack.Navigator>
