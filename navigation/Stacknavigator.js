@@ -19,6 +19,7 @@ import Verification from './../Class/FashionApp/Verification';
 import IntroScreen from './../Class/FashionApp/IntroScreen';
 import Bottomtab from './../Class/FashionApp/Bottomtab'
 import Details from '@/Class/FashionApp/Details';
+import Carts from '@/Class/FashionApp/Carts';
 
 
 const Stack = createNativeStackNavigator();
@@ -44,6 +45,7 @@ export default function StackNavigator() {
         <Stack.Screen name="IntroScreen" component={IntroScreen} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Signin" component={Signin} />
+        <Stack.Screen name="Carts" component={Carts} />
         <Stack.Screen name="Bottomtab" component={Bottomtab} />
         <Stack.Screen name="Details" component={Details}  options={{ unmountOnBlur: true }}/>
         {/* Fashion App */}

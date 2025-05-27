@@ -69,11 +69,11 @@ export default function Details({route,navigation}) {
           </View>
           <Text style={general.bigtext}>Description</Text>
            <Text style={{fontSize:15,marginTop:10}}>{item.description}</Text>
-           <View style={{justifyContent:'space-between',position:'absolute',bottom:10,backgroundColor:'red',width:'100%'}}>
+           <View style={general.space}>
             <Text style={{color:Colors.primary, fontSize:16, fontWeight:'bold'}}>$435</Text>
-            <View style={{width:'70%'}}>
-              <Button title="Buy Now"/>
-            </View>
+         <TouchableOpacity style={[general.button, {width:'60%', height:45}]} onPress={() => navigation.navigate('Carts')}>
+          <Text style={general.buttontext}>Buy Now</Text>
+          </TouchableOpacity>           
            </View>
           </View>
 

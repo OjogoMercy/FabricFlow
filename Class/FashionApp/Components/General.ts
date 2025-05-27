@@ -207,6 +207,14 @@ const general = StyleSheet.create({
         fontWeight:'bold',
         marginTop:10
       },
+      space:{justifyContent:'space-between',
+      position:'absolute',
+      bottom:10,
+      width:'100%',
+      flexDirection:'row',
+      alignItems:'center',
+      paddingHorizontal:15
+    },
   });
 
   export default general 
