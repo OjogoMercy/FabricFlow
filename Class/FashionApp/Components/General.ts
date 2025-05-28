@@ -265,6 +265,15 @@ const general = StyleSheet.create({
       marginHorizontal: 8,
       fontSize: 16,
     },
+    profile:{height:100,
+      width:100,
+      borderRadius:50,
+      borderColor:Colors.primary,
+      borderWidth:3,
+      alignSelf:'center',
+      marginLeft:20,
+      marginTop:20
+    },
   });
 
   export default general 
