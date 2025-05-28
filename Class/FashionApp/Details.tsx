@@ -4,11 +4,8 @@ import general from './Components/General'
 import Colors from './Components/Colors'
 import { Ionicons,FontAwesome } from '@expo/vector-icons'
 import { useState } from 'react'
-import Clothes from './Components/Clothing'
-import { useEffect } from 'react'
 import { StatusBar } from 'react-native'
 import { useFocusEffect } from 'expo-router'
-import Button from './Components/Button'
 
 export default function Details({route,navigation}) {
     const [active,setActive] = useState('M')

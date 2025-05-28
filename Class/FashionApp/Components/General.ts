@@ -12,7 +12,7 @@ const general = StyleSheet.create({
     container1: {
       flex: 1,
       backgroundColor: '#fff',
-      padding: 10,
+      padding: 15,
     },
     title: {
       color: '#fff',
@@ -214,6 +214,56 @@ const general = StyleSheet.create({
       flexDirection:'row',
       alignItems:'center',
       paddingHorizontal:15
+    },
+    long: {
+      flexDirection: 'row',
+      backgroundColor: '#fff',
+      borderRadius: 10,
+      padding: 10,
+      marginVertical: 8,
+      elevation: 3,
+      shadowColor: '#000',
+      shadowOpacity: 0.1,
+      shadowRadius: 4,
+      shadowOffset: { width: 0, height: 2 },
+    },
+    img: {
+      width: 70,
+      height: 90,
+      borderRadius: 8,
+    },
+    details: {
+      flex: 1,
+      paddingLeft: 10,
+      justifyContent: 'space-between',
+    },
+    rowBetween: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 6,
+    },
+    tit: {
+      fontSize: 16,
+      fontWeight: 'bold',
+    },
+    meta: {
+      fontSize: 13,
+      color: '#555',
+    },
+    price: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      color: 'red',
+    },
+    counter: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 10,
+    },
+    qty: {
+      marginHorizontal: 8,
+      fontSize: 16,
     },
   });
 
