@@ -34,6 +34,9 @@ const Signup = ({navigation}) => {
       </View>
       </View>
       <Button title="Sign Up" onPress={() => navigation.navigate("Verification")}/>
+      <View style={{position:'absolute',bottom:20}}>
+        <Text style={{textAlign:'center'}}>Already have an Account? <Text style={{color:'#803A32',fontWeight:'bold'}} onPress={() => navigation.navigate('Signin')}>Sign In</Text></Text>
+        </View>
     </SafeAreaView>
   )
 }

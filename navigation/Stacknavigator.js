@@ -27,7 +27,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <GestureHandlerRootView>
+    <GestureHandlerRootView style={{flex:1}}>
  <NavigationIndependentTree>
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false}}>

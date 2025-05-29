@@ -1,15 +1,17 @@
 import { Image, Text, TouchableOpacity, View,FlatList } from 'react-native'
-import React, { useCallback } from 'react'
+import React, { useRef, useMemo } from 'react'
 import general from '../Constants/General'
-import Colors from '../Constants/Colors'
 import { Ionicons,FontAwesome,AntDesign } from '@expo/vector-icons'
 import Header from '../Components/Header'
 import clothingData from '../Constants/Clothing'
+import BottomSheet from '@gorhom/bottom-sheet';
 
 
 const Carts = ({navigation}) => {
+  const sheetRef = useRef(null);
+  const snapPoints = useMemo(() => ['25%', '50%'], []);
   const renderItem =({item}) => (
-    <TouchableOpacity activeOpacity={0.7} style={general.long}>
+    <TouchableOpacity activeOpacity={0.7} style={general.long} onPress={() => sheetRef.current?.expand()}>
     <Image
       source={{ uri:item.imageUrl }}
       style={general.img}
@@ -42,6 +44,11 @@ const Carts = ({navigation}) => {
      renderItem={renderItem}
      showsVerticalScrollIndicator={false}
      />
+       <BottomSheet ref={sheetRef} index={-1} snapPoints={snapPoints}>
+        <View style={{flex:1,padding:20}}>
+          <Text>Content inside Bottom Sheet</Text>
+        </View>
+      </BottomSheet>
     </View>
   )
 }

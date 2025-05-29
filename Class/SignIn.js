@@ -75,9 +75,7 @@ const SignIn = ({navigation}) => {
       </View>
        <View style={{flexDirection:'row',marginTop:30,alignItems:'center',marginBottom:20}}>
         <Text style={{fontSize:12,marginRight:90,marginTop:8}}>Don't Have An Account?</Text>
-        <TouchableOpacity  onPress={() => navigation.navigate('SignUp')}>
-            <Text style={{fontSize:20,color:'red',fontWeight:'bold'}}>SignUp</Text>
-        </TouchableOpacity>
+            <Text style={{fontSize:20,color:'red',fontWeight:'bold'}} onPress={() =>  navigation.navigate('Signup')}>SignUp</Text>
       </View>
     </View>
   )

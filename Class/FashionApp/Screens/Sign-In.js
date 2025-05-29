@@ -42,9 +42,9 @@ const Signin = ({navigation}) => {
           <Image source={{uri:'https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png'}} style={general.google}/>
         </View>
         <Button title="Sign In" onPress={() => navigation.navigate("Bottomtab")}/>
-        <TouchableOpacity onPress={() => navigation.navigate("Signup")} style={{position:'absolute',bottom:20}}>
-        <Text style={{textAlign:'center'}}>Dont have an Account? <Text style={{color:'#803A32',fontWeight:'bold'}}>Sign Up</Text></Text>
-        </TouchableOpacity>
+        <View style={{position:'absolute',bottom:20}}>
+        <Text style={{textAlign:'center'}}>Dont have an Account? <Text style={{color:'#803A32',fontWeight:'bold'}} onPress={() => navigation.navigate('Signup')}>Sign Up</Text></Text>
+        </View>
     </SafeAreaView>
   )
 }
