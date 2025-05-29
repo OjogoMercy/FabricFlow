@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View ,StatusBar, TextInput,SafeAreaView,Image, TouchableOpacity} from 'react-native'
 import React from 'react'
-import general from './Components/General'
-import Button from './Components/Button'
+import general from '../Constants/General'
+import Button from '../Components/Button'
 
 const Signin = ({navigation}) => {
   return (

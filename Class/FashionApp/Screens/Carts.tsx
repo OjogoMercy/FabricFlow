@@ -1,10 +1,10 @@
 import { Image, Text, TouchableOpacity, View,FlatList } from 'react-native'
 import React, { useCallback } from 'react'
-import general from './Components/General'
-import Colors from './Components/Colors'
+import general from '../Constants/General'
+import Colors from '../Constants/Colors'
 import { Ionicons,FontAwesome,AntDesign } from '@expo/vector-icons'
-import Header from './Components/Header'
-import clothingData from './Components/Clothing'
+import Header from '../Components/Header'
+import clothingData from '../Constants/Clothing'
 
 
 const Carts = ({navigation}) => {

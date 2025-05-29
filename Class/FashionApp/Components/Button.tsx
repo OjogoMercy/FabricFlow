@@ -1,6 +1,6 @@
 import { View, Text ,TouchableOpacity} from 'react-native'
 import React from 'react'
-import general from './General'
+import general from '../Constants/General'
 
 export default function Button({title,onPress}) {
   return (

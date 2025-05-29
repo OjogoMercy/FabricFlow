@@ -1,11 +1,11 @@
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View,FlatList, SafeAreaView } from 'react-native'
 import React from 'react'
-import general from './Components/General'
-import Colors from './Components/Colors'
+import general from '../Constants/General'
+import Colors from '../Constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import jacket from './Components/jacket.png'
 import { useState } from 'react'
-import Clothes from './Components/Clothing'
+import Clothes from '../Constants/Clothing'
 
 const Homescreen = ({navigation}) => {
   const [active,setActive] = useState('All')

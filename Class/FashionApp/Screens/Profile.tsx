@@ -1,9 +1,9 @@
 import { Ionicons,FontAwesome,AntDesign } from '@expo/vector-icons'
 import { Image, Text, TextInput, TouchableOpacity, View,FlatList, SafeAreaView } from 'react-native'
 import { FontAwesome5, Feather, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons';
-import Header from './Components/Header'
-import general from './Components/General'
-import Colors from './Components/Colors'
+import Header from '../Components/Header'
+import general from '../Constants/General'
+import Colors from '../Constants/Colors'
 const Profile = () => {
   const iconFamilies: Record<string, any> = {FontAwesome5,Feather,FontAwesome6, Ionicons, MaterialCommunityIcons};
 
