@@ -9,7 +9,7 @@ import clothingData from './Components/Clothing'
 
 const Carts = ({navigation}) => {
   const renderItem =({item}) => (
-    <View style={general.long}>
+    <TouchableOpacity activeOpacity={0.7} style={general.long}>
     <Image
       source={{ uri:item.imageUrl }}
       style={general.img}
@@ -32,7 +32,7 @@ const Carts = ({navigation}) => {
         </View>
       </View>
     </View>
-  </View>
+  </TouchableOpacity>
   )
   return (
     <View style={general.container1}>
@@ -41,7 +41,6 @@ const Carts = ({navigation}) => {
      data={clothingData}
      renderItem={renderItem}
      showsVerticalScrollIndicator={false}
-
      />
     </View>
   )

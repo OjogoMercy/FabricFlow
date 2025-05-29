@@ -1,9 +1,7 @@
 import { Ionicons,FontAwesome,AntDesign } from '@expo/vector-icons'
 import { Image, Text, TextInput, TouchableOpacity, View,FlatList, SafeAreaView } from 'react-native'
-import { StatusBar } from 'react-native'
 import { FontAwesome5, Feather, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons';
 import Header from './Components/Header'
-import clothingData from './Components/Clothing'
 import general from './Components/General'
 import Colors from './Components/Colors'
 const Profile = () => {

@@ -57,7 +57,6 @@ const Homescreen = ({navigation}) => {
       </View>
     );
   };
-
   return (
     <SafeAreaView style={[general.container1 ,{paddingHorizontal:15}]}>
         <View style={general.row}>
