@@ -1,7 +1,7 @@
 import {Text, View ,StatusBar, TextInput,SafeAreaView,Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import general from '../Constants/General'
-import logo from '../../assets/images/icons8-correct-160.png'
+import logo from '../../../assets/images/icons8-correct-160.png'
 import Button from '../Components/Button'
 const Succesful = ({navigation}) => {
   return (

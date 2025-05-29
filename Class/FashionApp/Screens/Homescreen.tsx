@@ -3,7 +3,7 @@ import React from 'react'
 import general from '../Constants/General'
 import Colors from '../Constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
-import jacket from './Components/jacket.png'
+import jacket from '../Constants/jacket.png'
 import { useState } from 'react'
 import Clothes from '../Constants/Clothing'
 
