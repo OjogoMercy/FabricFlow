@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 import jacket from '../Constants/jacket.png'
 import { useState } from 'react'
 import Clothes from '../Constants/Clothing'
+import { StatusBar } from 'react-native'
 
 const Homescreen = ({navigation}) => {
   const [active,setActive] = useState('All')
@@ -13,6 +14,7 @@ const Homescreen = ({navigation}) => {
 
   const renderItem = ({ item }) => (
     <View style={general.con}>
+      <StatusBar  backgroundColor={"white"} barStyle={'dark-content'}/>
       <TouchableOpacity activeOpacity={0.7} style={general.card} onPress={() => navigation.navigate('Details', {item})} >
       <Image source={{ uri: item.imageUrl }} style={general.image} />
       <View style={general.float}> <Ionicons name='heart' color={Colors.primary} size={20}/></View>

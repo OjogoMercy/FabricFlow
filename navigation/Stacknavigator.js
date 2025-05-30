@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer,NavigationIndependentTree } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';  
+
 import SignUp from '../Class/SignUp';
 import SignIn from '../Class/SignIn';
 import Flexbox from './../Class/Flexbox';

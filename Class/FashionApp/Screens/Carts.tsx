@@ -10,8 +10,13 @@ import BottomSheet from '@gorhom/bottom-sheet';
 const Carts = ({navigation}) => {
   const sheetRef = useRef(null);
   const snapPoints = useMemo(() => ['25%', '50%'], []);
+
+  // const bottomSheetRef = useRef<BottomSheet>(null);
+
+  const handleOpenPress  = () => sheetRef.current?.expand();
+  const handleClosePress  = () => sheetRef.current?.close();
   const renderItem =({item}) => (
-    <TouchableOpacity activeOpacity={0.7} style={general.long} onPress={() => sheetRef.current?.expand()}>
+    <TouchableOpacity activeOpacity={0.7} style={general.long} onPress={handleOpenPress}>
     <Image
       source={{ uri:item.imageUrl }}
       style={general.img}
@@ -45,7 +50,7 @@ const Carts = ({navigation}) => {
      showsVerticalScrollIndicator={false}
      />
        <BottomSheet ref={sheetRef} index={-1} snapPoints={snapPoints}>
-        <View style={{flex:1,padding:20}}>
+        <View style={{padding:20}}>
           <Text>Content inside Bottom Sheet</Text>
         </View>
       </BottomSheet>
