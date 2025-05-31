@@ -22,13 +22,13 @@ import IntroScreen from '../Class/FashionApp/Screens/IntroScreen';
 import Bottomtab from './../Class/FashionApp/Bottomtab'
 import Details from '@/Class/FashionApp/Screens/Details';
 import Carts from '@/Class/FashionApp/Screens/Carts';
+import Sheet from '@/Class/FashionApp/Screens/sheet';
 
 
 const Stack = createNativeStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <GestureHandlerRootView style={{flex:1}}>
  <NavigationIndependentTree>
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false}}>
@@ -50,13 +50,13 @@ export default function StackNavigator() {
         <Stack.Screen name="Signin" component={Signin} />
         <Stack.Screen name="Carts" component={Carts} />
         <Stack.Screen name="Bottomtab" component={Bottomtab} />
+        <Stack.Screen name="Sheet" component={Sheet} />
         <Stack.Screen name="Details" component={Details}  options={{ unmountOnBlur: true }}/>
         {/* Fashion App */}
         <Stack.Screen name="Twitter" component={Twitter} />
       </Stack.Navigator>
     </NavigationContainer>
     </NavigationIndependentTree>    
-    </GestureHandlerRootView>
    
   );
 }

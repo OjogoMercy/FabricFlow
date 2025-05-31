@@ -66,7 +66,7 @@ const Homescreen = ({navigation}) => {
         <Text style={{fontSize:20, color:Colors.text,fontWeight:'bold'}}>Welcome Back!</Text>
         <Text style={{fontSize:14,fontWeight:'bold',marginLeft:10}}>Ojogo Mercy</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Sheet')}>
               <Ionicons name='notifications' size={20} color={Colors.primary}/>
         </TouchableOpacity>
       

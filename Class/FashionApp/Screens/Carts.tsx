@@ -49,7 +49,8 @@ const Carts = ({navigation}) => {
      renderItem={renderItem}
      showsVerticalScrollIndicator={false}
      />
-       <BottomSheet ref={sheetRef} index={-1} snapPoints={snapPoints}>
+       <BottomSheet ref={sheetRef} index={0} snapPoints={snapPoints}
+       >
         <View style={{padding:20}}>
           <Text>Content inside Bottom Sheet</Text>
         </View>
