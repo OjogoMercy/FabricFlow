@@ -4,7 +4,8 @@ import BottomSheet from '@gorhom/bottom-sheet';
 
 export default function Sheet() {
   const bottomSheetRef = useRef<BottomSheet>(null);
-  const snapPoints = useMemo(() => ['25%', '50%'], []);
+  const snapPoints = ['25%', '50%'];
+  console.log("Button pressed!");
 
   const openSheet = () => {
     bottomSheetRef.current?.expand(); // or .snapToIndex(1)

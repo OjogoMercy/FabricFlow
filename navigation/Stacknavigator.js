@@ -1,8 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer,NavigationIndependentTree } from '@react-navigation/native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';  
-
 import SignUp from '../Class/SignUp';
 import SignIn from '../Class/SignIn';
 import Flexbox from './../Class/Flexbox';
@@ -23,6 +21,7 @@ import Bottomtab from './../Class/FashionApp/Bottomtab'
 import Details from '@/Class/FashionApp/Screens/Details';
 import Carts from '@/Class/FashionApp/Screens/Carts';
 import Sheet from '@/Class/FashionApp/Screens/sheet';
+import Todo from '@/Class/Todo-App/Todo';
 
 
 const Stack = createNativeStackNavigator();
@@ -31,7 +30,7 @@ export default function StackNavigator() {
   return (
  <NavigationIndependentTree>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Todo" screenOptions={{headerShown: false}}>
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />
@@ -54,6 +53,7 @@ export default function StackNavigator() {
         <Stack.Screen name="Details" component={Details}  options={{ unmountOnBlur: true }}/>
         {/* Fashion App */}
         <Stack.Screen name="Twitter" component={Twitter} />
+        <Stack.Screen name="Todo" component={Todo} />
       </Stack.Navigator>
     </NavigationContainer>
     </NavigationIndependentTree>    
