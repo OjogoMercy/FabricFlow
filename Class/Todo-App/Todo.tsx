@@ -69,15 +69,15 @@ const styles = StyleSheet.create({
   starsRow: {
     flexDirection: 'row',
     marginBottom: 5,
-    gap:5,
     borderColor:'#ccc',
-    borderRadius:10,
+    borderRadius:25,
     borderWidth:2,
-    padding:5
+    padding:10,
+    alignSelf:'center'
   },
   float1:{
-    height:30,
-    width:30,
+    height:40,
+    width:40,
     borderRadius:25,
     backgroundColor:'#E2725B',
     justifyContent:'center',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
    },
    inputcontainer:{
     padding:10,
-    width:'80%'
+    width:'75%'
   },
   todoItem: {
     padding: 15,
