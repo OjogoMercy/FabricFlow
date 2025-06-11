@@ -14,21 +14,16 @@ export function toggleLike(id) {
     );
     return getTasks();
   }
-
-export function addTask (id,text,liked){
+// to add tasks 
+export function addTask (text,liked){
    return Tasks.push({
-    id: id,
+    id: Math.random(),
     text: text,
     liked :liked,
     mark: false,
-    pending: true
-    
+    pending: true  
    });
-
 }
-
-addTask(4,'Take a break', false)
-addTask(5, 'Take a Walk', true)
 
  export const toMark = Tasks.find((task) => task.id === 2);
 // use find when you need to get a single element but when going for a category of  items use a filter

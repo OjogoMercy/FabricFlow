@@ -1,4 +1,4 @@
-import { View, Text, Pressable, TextInput ,StyleSheet,FlatList,TouchableOpacity } from 'react-native'
+import { View, Text, TextInput ,StyleSheet,FlatList,TouchableOpacity, StatusBar, KeyboardAvoidingView } from 'react-native'
 import React,{useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, toMark, removeTask, toComplete, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
@@ -28,6 +28,7 @@ export default function Todo() {
  
   return (
     <View style={styles.container1}>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'}/>
       <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}>
       <Text style={styles.bigtext}>Todo-App</Text>
       <TouchableOpacity style={styles.float1} activeOpacity={0.7} onPress={handleClearAll}>
@@ -44,17 +45,23 @@ export default function Todo() {
       <Text style={[styles.todoText, item.liked && styles.likedText]}>
   {item.text}
 </Text> 
-      <TouchableOpacity onPress={() => {
+<View style={{flexDirection:'row',gap:10}}>
+<TouchableOpacity onPress={() => {
         toggleLike(item.id);
         setTasks(getTasks());
       }}>
         <Ionicons name={item.liked ? 'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'} />
       </TouchableOpacity>
+      <TouchableOpacity>
+      <Ionicons name='trash-outline' size={20} color='#E2725B'/>
+      </TouchableOpacity>
+</View>
+     
     </View>
   )}
 />
 
-      <View style={[styles.starsRow,{position:'absolute',bottom:20}]}>
+      <KeyboardAvoidingView style={[styles.starsRow,{position:'absolute',bottom:20}]}>
         <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
             <Ionicons name='add' size={20} color='white'/>
         </TouchableOpacity>
@@ -63,9 +70,9 @@ export default function Todo() {
         placeholderTextColor={'#ccc'}
         style={styles.inputcontainer}
         value={taskText}
-        onChangeText={setTaskText}
+        onChangeText={(value)=> setTaskText(value)}
         />
-      </View>
+      </KeyboardAvoidingView>
     </View>
   )
 }
