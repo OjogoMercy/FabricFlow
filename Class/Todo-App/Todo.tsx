@@ -1,21 +1,25 @@
 import { View, Text, Pressable, TextInput ,StyleSheet,FlatList,TouchableOpacity } from 'react-native'
 import React,{useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
+import {Tasks, addTask, toMark, removeTask, toComplete, pending} from './Todojavasctipt'
 
 export default function Todo() {
-    const [todo,setTodos]  = useState([
-    { id: '1', text: 'Buy groceries' ,liked:false},
-    { id: '2', text: 'Walk the dog',liked:false },
-    { id: '3', text: 'Read a book',liked:false },
-  ])
+  const [tasks, setTasks] = useState(Tasks);
+  const [taskText, setTaskText] = useState('');
 
-  const toggleLike = (id) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((item) =>
-        item.id === id ? { ...item, liked: !item.liked } : item
-      )
-    );
-  };
+  //   const [todo,setTodos]  = useState([
+  //   { id: '1', text: 'Buy groceries' ,liked:false},
+  //   { id: '2', text: 'Walk the dog',liked:false },
+  //   { id: '3', text: 'Read a book',liked:false },
+  // ])
+
+  // const toggleLike = (id) => {
+  //   setTodos((prevTodos) =>
+  //     prevTodos.map((item) =>
+  //       item.id === id ? { ...item, liked: !item.liked } : item
+  //     )
+  //   );
+  // };
   
  
   return (
@@ -27,7 +31,7 @@ export default function Todo() {
         </TouchableOpacity>
       </View>
       <FlatList
-        data={todo}
+        data={Tasks}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.todoItem}>
@@ -39,17 +43,19 @@ export default function Todo() {
         )}
       />
       <View style={[styles.starsRow,{position:'absolute',bottom:20}]}>
-        <Pressable style={styles.float1}>
+        <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={() => addTask(taskText,setTaskText)}>
             <Ionicons name='add' size={20} color='white'/>
-        </Pressable>
+        </TouchableOpacity>
         <TextInput 
         placeholder='Input'
         placeholderTextColor={'#ccc'}
         style={styles.inputcontainer}
+        value={taskText}
+        onChangeText={setTaskText}
         />
-        <Pressable style={styles.float1}>
+        <TouchableOpacity  activeOpacity={0.7} style={styles.float1} onPress={() => removeTask()}>
             <Ionicons name='trash-outline' size={20} color='white'/>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   )
