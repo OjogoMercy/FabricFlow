@@ -13,26 +13,26 @@ export default function Todo() {
   //   { id: '3', text: 'Read a book',liked:false },
   // ])
 
-  // const toggleLike = (id) => {
-  //   setTodos((prevTodos) =>
-  //     prevTodos.map((item) =>
-  //       item.id === id ? { ...item, liked: !item.liked } : item
-  //     )
-  //   );
-  // };
-  
+  const toggleLike = (id) => {
+    setTasks(prevTasks =>
+        prevTasks.map(task =>
+            task.id === id ? { ...task, liked: !task.liked } : task
+        )
+    );
+};
  
   return (
     <View style={styles.container1}>
       <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}>
       <Text style={styles.bigtext}>Todo-App</Text>
-      <TouchableOpacity style={styles.float1} activeOpacity={0.7}>
+      <TouchableOpacity style={styles.float1} activeOpacity={0.7} onPress={() => setTasks([])}>
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
       </View>
       <FlatList
         data={Tasks}
-        keyExtractor={(item) => item.id}
+        // keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator = {false}
         renderItem={({ item }) => (
           <View style={styles.todoItem}>
             <Text style={styles.todoText}>{item.text}</Text>
@@ -53,7 +53,7 @@ export default function Todo() {
         value={taskText}
         onChangeText={setTaskText}
         />
-        <TouchableOpacity  activeOpacity={0.7} style={styles.float1} onPress={() => removeTask()}>
+        <TouchableOpacity  activeOpacity={0.7} style={styles.float1}onPress={() => removeTask(item.id, setTasks, tasks)}>
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
       </View>
