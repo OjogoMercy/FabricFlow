@@ -1,7 +1,7 @@
 
 console.log('Todo-App')
 console.log('Tasks')
-export const Tasks = [
+export let Tasks = [
     { id: 1, text: 'Buy groceries' ,liked:false,mark:true,pending: true},
     { id: 2, text: 'Walk the dog',liked:false,mark:false ,pending: false},
     { id: 3, text: 'Read a book',liked:false ,mark:false,pending: true},

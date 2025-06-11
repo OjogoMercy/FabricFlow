@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, toMark, removeTask, toComplete, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
 
 export default function Todo() {
-  const [tasks, setTasks] = useState(Tasks);
+  const [tasks, setTasks] = useState(tasks);
   const [taskText, setTaskText] = useState('');
 
   //   const [todo,setTodos]  = useState([
@@ -17,6 +17,13 @@ export default function Todo() {
    const clear = removeAllTasks();
    setTasks(clear);
  }
+ const handleTask = () => {
+  if (taskText.trim()) {
+    const updatedTask = addTask(taskText);
+    setTasks(updatedTask); 
+    setTaskText('');
+  }
+};
   
  
   return (
@@ -27,21 +34,28 @@ export default function Todo() {
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
       </View>
+      
       <FlatList
-        data={Tasks}
-        // keyExtractor={(item) => item.id}
-        showsVerticalScrollIndicator = {false}
-        renderItem={({ item }) => (
-          <View style={styles.todoItem}>
-            <Text style={styles.todoText}>{item.text}</Text>
-            <TouchableOpacity activeOpacity={0.7} onPress={() => toggleLike(item.id)} >
-               <Ionicons name={item.liked ?  'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'}/>
-            </TouchableOpacity>
-          </View>
-        )}
-      />
+  data={Tasks}
+  keyExtractor={(item) => item.id.toString()}
+  showsVerticalScrollIndicator={false}
+  renderItem={({ item }) => (
+    <View style={styles.todoItem}>
+      <Text style={[styles.todoText, item.liked && styles.likedText]}>
+  {item.text}
+</Text> 
+      <TouchableOpacity onPress={() => {
+        toggleLike(item.id);
+        setTasks(getTasks());
+      }}>
+        <Ionicons name={item.liked ? 'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'} />
+      </TouchableOpacity>
+    </View>
+  )}
+/>
+
       <View style={[styles.starsRow,{position:'absolute',bottom:20}]}>
-        <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={() => addTask(taskText,setTaskText)}>
+        <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
             <Ionicons name='add' size={20} color='white'/>
         </TouchableOpacity>
         <TextInput 
@@ -51,9 +65,6 @@ export default function Todo() {
         value={taskText}
         onChangeText={setTaskText}
         />
-        <TouchableOpacity  activeOpacity={0.7} style={styles.float1}onPress={() => removeTask(tasks)}>
-            <Ionicons name='trash-outline' size={20} color='white'/>
-        </TouchableOpacity>
       </View>
     </View>
   )
@@ -90,7 +101,11 @@ const styles = StyleSheet.create({
    },
    inputcontainer:{
     padding:10,
-    width:'75%'
+    width:'85%'
+  },
+  likedText: {
+    textDecorationLine: 'line-through',
+    color: '#E2725B', // optional: emphasize it's liked
   },
   todoItem: {
     padding: 15,
@@ -102,5 +117,6 @@ const styles = StyleSheet.create({
   },
   todoText: {
     fontSize: 16,
+    color:'black'
   },
 })
