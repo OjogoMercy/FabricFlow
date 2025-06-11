@@ -1,7 +1,7 @@
 import { View, Text, Pressable, TextInput ,StyleSheet,FlatList,TouchableOpacity } from 'react-native'
 import React,{useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
-import {Tasks, addTask, toMark, removeTask, toComplete, pending} from './Todojavasctipt'
+import {Tasks, addTask, toMark, removeTask, toComplete, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
 
 export default function Todo() {
   const [tasks, setTasks] = useState(Tasks);
@@ -13,19 +13,17 @@ export default function Todo() {
   //   { id: '3', text: 'Read a book',liked:false },
   // ])
 
-  const toggleLike = (id) => {
-    setTasks(prevTasks =>
-        prevTasks.map(task =>
-            task.id === id ? { ...task, liked: !task.liked } : task
-        )
-    );
-};
+ const handleClearAll = () =>   {
+   const clear = removeAllTasks();
+   setTasks(clear);
+ }
+  
  
   return (
     <View style={styles.container1}>
       <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}>
       <Text style={styles.bigtext}>Todo-App</Text>
-      <TouchableOpacity style={styles.float1} activeOpacity={0.7} onPress={() => setTasks([])}>
+      <TouchableOpacity style={styles.float1} activeOpacity={0.7} onPress={handleClearAll}>
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
       </View>
@@ -53,7 +51,7 @@ export default function Todo() {
         value={taskText}
         onChangeText={setTaskText}
         />
-        <TouchableOpacity  activeOpacity={0.7} style={styles.float1}onPress={() => removeTask(item.id, setTasks, tasks)}>
+        <TouchableOpacity  activeOpacity={0.7} style={styles.float1}onPress={() => removeTask(tasks)}>
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
       </View>

@@ -6,6 +6,15 @@ export const Tasks = [
     { id: 2, text: 'Walk the dog',liked:false,mark:false ,pending: false},
     { id: 3, text: 'Read a book',liked:false ,mark:false,pending: true},
 ]
+export const getTasks = () => [...Tasks]
+// to toggle the like 
+export function toggleLike(id) {
+    Tasks = Tasks.map(task =>
+      task.id === id ? { ...task, liked: !task.liked } : task
+    );
+    return getTasks();
+  }
+
 export function addTask (id,text,liked){
    return Tasks.push({
     id: id,
@@ -13,7 +22,9 @@ export function addTask (id,text,liked){
     liked :liked,
     mark: false,
     pending: true
+    
    });
+
 }
 
 addTask(4,'Take a break', false)
@@ -37,6 +48,12 @@ if (toMark){
 console.log('Task marked as done',Tasks[2].text);
    
 }    
+// to remove all tasks 
+export function removeAllTasks() {
+  Tasks = [];
+  return getTasks();
+}
+
 // to remove a task
 export const removeTask = (taskId) => {
   return Tasks.filter(task => task.id !== taskId);
