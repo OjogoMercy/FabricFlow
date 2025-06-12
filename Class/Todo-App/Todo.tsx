@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
 
 export default function Todo() {
-  const [tasks, setTasks] = useState(tasks);
+  const [tasks, setTasks] = useState(Tasks);
   const [taskText, setTaskText] = useState('');
 
   //   const [todo,setTodos]  = useState([
@@ -28,8 +28,9 @@ export default function Todo() {
 //   const updatedTasks = tasks.filter(task => task.id !== taskId); 
 //   setTasks(updatedTasks);
 // };
- const removeTask = (taskId) => {
-  return Tasks.filter(task => task.id !== taskId);
+const removeTask = (taskId) => {
+  const updatedTasks = tasks.filter(task => task.id !== taskId); 
+  setTasks(updatedTasks);
 };
  
   return (
@@ -58,7 +59,7 @@ export default function Todo() {
       }}>
         <Ionicons name={item.liked ? 'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => removeTask(item.id)}>
+      <TouchableOpacity onPress={() => removeTask(item.id)}>  
       <Ionicons name='trash-outline' size={20} color='#E2725B'/>
       </TouchableOpacity>
 </View>
