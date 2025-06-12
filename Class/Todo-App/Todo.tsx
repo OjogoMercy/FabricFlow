@@ -2,10 +2,14 @@ import { View, Text, TextInput ,StyleSheet,FlatList,TouchableOpacity, StatusBar,
 import React,{useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
+import Theme from './Colors'
+import Button from '../FashionApp/Components/Button'
 
 export default function Todo() {
   const [tasks, setTasks] = useState(Tasks);
   const [taskText, setTaskText] = useState('');
+  const [darkMode, setDarkmode] = useState(false)
+  const theme = darkMode ? Theme.lightTheme : Theme.darkTheme;
 
   //   const [todo,setTodos]  = useState([
   //   { id: '1', text: 'Buy groceries' ,liked:false},
@@ -34,7 +38,7 @@ const removeTask = (taskId) => {
 };
  
   return (
-    <View style={styles.container1}>
+    <View style={[styles.container1 ,{backgroundColor:theme.background}]}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'}/>
       <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}>
       <Text style={styles.bigtext}>Todo-App</Text>
@@ -67,8 +71,10 @@ const removeTask = (taskId) => {
     </View>
   )}
 />
-
       <KeyboardAvoidingView style={[styles.starsRow,{position:'absolute',bottom:20}]}>
+        
+      <Button title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'} 
+             onPress={()=> setDarkmode(!darkMode)}/> 
         <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
             <Ionicons name='add' size={20} color='white'/>
         </TouchableOpacity>
@@ -87,7 +93,7 @@ const removeTask = (taskId) => {
 const styles = StyleSheet.create({
   container1:{
     flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor:'#fff',
       padding: 15,
   },
   bigtext:{
@@ -102,7 +108,7 @@ const styles = StyleSheet.create({
     borderRadius:25,
     borderWidth:2,
     padding:10,
-    alignSelf:'center'
+    alignSelf:'center',
   },
   float1:{
     height:40,
@@ -111,11 +117,12 @@ const styles = StyleSheet.create({
     backgroundColor:'#E2725B',
     justifyContent:'center',
     alignItems:'center',
-    elevation:3
+    elevation:3,
+   
    },
    inputcontainer:{
-    padding:10,
-    width:'85%'
+    padding:8,
+    width:'85%',
   },
   likedText: {
     textDecorationLine: 'line-through',
