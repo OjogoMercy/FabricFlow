@@ -1,7 +1,7 @@
 import { View, Text, TextInput ,StyleSheet,FlatList,TouchableOpacity, StatusBar, KeyboardAvoidingView } from 'react-native'
 import React,{useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
-import {Tasks, addTask, toMark, removeTask, toComplete, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
+import {Tasks, addTask, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
 
 export default function Todo() {
   const [tasks, setTasks] = useState(tasks);
@@ -24,7 +24,13 @@ export default function Todo() {
     setTaskText('');
   }
 };
-  
+// const handleDeleteTask = (taskId) => {
+//   const updatedTasks = tasks.filter(task => task.id !== taskId); 
+//   setTasks(updatedTasks);
+// };
+ const removeTask = (taskId) => {
+  return Tasks.filter(task => task.id !== taskId);
+};
  
   return (
     <View style={styles.container1}>
@@ -52,7 +58,7 @@ export default function Todo() {
       }}>
         <Ionicons name={item.liked ? 'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'} />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => removeTask(item.id)}>
       <Ionicons name='trash-outline' size={20} color='#E2725B'/>
       </TouchableOpacity>
 </View>
