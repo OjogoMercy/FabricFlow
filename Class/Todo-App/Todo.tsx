@@ -1,11 +1,9 @@
 import { View, Text, TextInput ,StyleSheet,FlatList,TouchableOpacity, StatusBar, KeyboardAvoidingView } from 'react-native'
 import React,{useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
-import {Tasks, addTask, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
+import {Tasks, addTask, removeAllTasks,getTasks,toggleLike,removeTask} from './Todojavasctipt'
 import Theme from './Colors'
-import Button from '../FashionApp/Components/Button'
-import light from '../../assets/images/icons8-sun-50.png'
-import dark from '../../assets/images/icons8-night-64.png'
+
 
 export default function Todo() {
   const [tasks, setTasks] = useState(Tasks);
@@ -34,29 +32,32 @@ export default function Todo() {
 //   const updatedTasks = tasks.filter(task => task.id !== taskId); 
 //   setTasks(updatedTasks);
 // };
-const removeTask = (taskId) => {
-  const updatedTasks = tasks.filter(task => task.id !== taskId); 
-  setTasks(updatedTasks);
+const removeTaskbutton = (taskId) => {
+  const updatedTasks = removeTask(taskId);
+  setTasks(updatedTasks)
 };
  
   return (
     <View style={[styles.container1 ,{backgroundColor:theme.background}]}>
-      <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'}/>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'} translucent/>
       <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}>
-        <Text style={styles.bigtext}>Todo-App</Text>
-        <TouchableOpacity style={styles.float1}>
-          
+        <Text style={[styles.bigtext,{color:theme.text}]}>Todo-App</Text>
+        <View style={{flexDirection:'row'}}>
+      <TouchableOpacity style={styles.float1} onPress={()=> setDarkmode(!darkMode)} activeOpacity={0.7}>
+          <Ionicons  name={ darkMode ? 'cloudy-night' : 'sunny' }size={20} color='white'/>
         </TouchableOpacity>
       <TouchableOpacity style={styles.float1} activeOpacity={0.7} onPress={handleClearAll}>
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
+        </View>
+       
       </View>
       <FlatList
-  data={Tasks}
+  data={tasks}
   keyExtractor={(item) => item.id.toString()}
   showsVerticalScrollIndicator={false}
   renderItem={({ item }) => (
-    <View style={styles.todoItem}>
+    <View style={[styles.todoItem,{backgroundColor:theme.inputBackground}]}>
       <Text style={[styles.todoText, item.liked && styles.likedText]}>
   {item.text}
 </Text> 
@@ -67,7 +68,7 @@ const removeTask = (taskId) => {
       }}>
         <Ionicons name={item.liked ? 'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={removeTask}>  
+      <TouchableOpacity onPress={() => removeTaskbutton(item.id)}>  
       <Ionicons name='trash-outline' size={20} color='#E2725B'/>
       </TouchableOpacity>
 </View>
@@ -75,8 +76,6 @@ const removeTask = (taskId) => {
     </View>
   )}
       />
-     
-      
       <KeyboardAvoidingView style={[styles.starsRow,{alignSelf:'baseline'}]}>
         <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
             <Ionicons name='add' size={20} color='white'/>
@@ -84,15 +83,12 @@ const removeTask = (taskId) => {
         <TextInput 
         placeholder='Input'
         placeholderTextColor={'#ccc'}
-        style={styles.inputcontainer}
+        style={[styles.inputcontainer, {backgroundColor:theme.inputBackground}]}
         value={taskText}
         onChangeText={(value)=> setTaskText(value)}
         />
         
-      </KeyboardAvoidingView>
-       <TouchableOpacity style={styles.toggle} onPress={()=> setDarkmode(!darkMode)}>
-        <Text style={{color:'white',fontWeight:'bold'}}>{ darkMode ? 'Dark mode ' : 'Light mode'}</Text>
-      </TouchableOpacity>   
+      </KeyboardAvoidingView>  
     </View>
   )
 }
@@ -132,7 +128,8 @@ const styles = StyleSheet.create({
     backgroundColor:'#E2725B',
     justifyContent:'center',
     alignItems:'center',
-    elevation:3,
+    elevation: 3,
+    marginLeft:7
    
    },
    inputcontainer:{

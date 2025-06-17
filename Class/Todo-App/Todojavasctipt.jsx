@@ -15,14 +15,16 @@ export function toggleLike(id) {
     return getTasks();
   }
 // to add tasks 
-export function addTask (text,liked){
-   return Tasks.push({
-    id: Math.random(),
-    text: text,
-    liked :liked,
+export function addTask(text, liked = false) {
+  const newTask = {
+    id: Date.now(),
+    text,
+    liked,
     mark: false,
-    pending: true  
-   });
+    pending: true,
+  };
+  Tasks.push(newTask);
+  return [...Tasks]; // return a copy of updated tasks
 }
 
  export const toMark = Tasks.find((task) => task.id === 2);
@@ -50,9 +52,10 @@ export function removeAllTasks() {
 }
 
 // to remove a task
-export const removeTask = (taskId) => {
-  return Tasks.filter(task => task.id !== taskId);
-};
+export function removeTask(taskId) {
+  Tasks = Tasks.filter(task => task.id !== taskId);
+  return [...Tasks]; // return updated tasks
+}
 // console.log(remove)
 
 // filter tasks as completed or pending
