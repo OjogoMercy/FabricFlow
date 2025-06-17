@@ -4,6 +4,8 @@ import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, removeAllTasks,getTasks,toggleLike} from './Todojavasctipt'
 import Theme from './Colors'
 import Button from '../FashionApp/Components/Button'
+import light from '../../assets/images/icons8-sun-50.png'
+import dark from '../../assets/images/icons8-night-64.png'
 
 export default function Todo() {
   const [tasks, setTasks] = useState(Tasks);
@@ -41,12 +43,14 @@ const removeTask = (taskId) => {
     <View style={[styles.container1 ,{backgroundColor:theme.background}]}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'}/>
       <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}>
-      <Text style={styles.bigtext}>Todo-App</Text>
+        <Text style={styles.bigtext}>Todo-App</Text>
+        <TouchableOpacity style={styles.float1}>
+          
+        </TouchableOpacity>
       <TouchableOpacity style={styles.float1} activeOpacity={0.7} onPress={handleClearAll}>
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
       </View>
-      
       <FlatList
   data={Tasks}
   keyExtractor={(item) => item.id.toString()}
@@ -63,18 +67,17 @@ const removeTask = (taskId) => {
       }}>
         <Ionicons name={item.liked ? 'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => removeTask(item.id)}>  
+      <TouchableOpacity onPress={removeTask}>  
       <Ionicons name='trash-outline' size={20} color='#E2725B'/>
       </TouchableOpacity>
 </View>
      
     </View>
   )}
-/>
-      <KeyboardAvoidingView style={[styles.starsRow,{position:'absolute',bottom:20}]}>
-        
-      <Button title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'} 
-             onPress={()=> setDarkmode(!darkMode)}/> 
+      />
+     
+      
+      <KeyboardAvoidingView style={[styles.starsRow,{alignSelf:'baseline'}]}>
         <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
             <Ionicons name='add' size={20} color='white'/>
         </TouchableOpacity>
@@ -85,7 +88,11 @@ const removeTask = (taskId) => {
         value={taskText}
         onChangeText={(value)=> setTaskText(value)}
         />
+        
       </KeyboardAvoidingView>
+       <TouchableOpacity style={styles.toggle} onPress={()=> setDarkmode(!darkMode)}>
+        <Text style={{color:'white',fontWeight:'bold'}}>{ darkMode ? 'Dark mode ' : 'Light mode'}</Text>
+      </TouchableOpacity>   
     </View>
   )
 }
@@ -100,6 +107,14 @@ const styles = StyleSheet.create({
     color: '#555',
       fontSize: 24,
       fontWeight: 'bold',
+  },
+  toggle: {
+    backgroundColor: '#E2725B',
+    alignItems:'center',
+    alignSelf: 'center',
+    justifyContent:'center',
+    padding: 15,
+    borderRadius:10
   },
   starsRow: {
     flexDirection: 'row',
@@ -126,7 +141,7 @@ const styles = StyleSheet.create({
   },
   likedText: {
     textDecorationLine: 'line-through',
-    color: '#E2725B', // optional: emphasize it's liked
+    color: '#E2725B', 
   },
   todoItem: {
     padding: 15,
