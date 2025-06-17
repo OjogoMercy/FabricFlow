@@ -76,7 +76,7 @@ const removeTaskbutton = (taskId) => {
     </View>
   )}
       />
-      <KeyboardAvoidingView style={[styles.starsRow,{alignSelf:'baseline'}]}>
+      <KeyboardAvoidingView style={[styles.starsRow,{alignSelf:'baseline',backgroundColor:theme.inputBackground}]}>
         <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
             <Ionicons name='add' size={20} color='white'/>
         </TouchableOpacity>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     borderColor:'#ccc',
     borderRadius:25,
     borderWidth:2,
-    padding:10,
+    padding:7,
     alignSelf:'center',
   },
   float1:{
