@@ -10,13 +10,6 @@ export default function Todo() {
   const [taskText, setTaskText] = useState('');
   const [darkMode, setDarkmode] = useState(false)
   const theme = darkMode ? Theme.lightTheme : Theme.darkTheme;
-
-  //   const [todo,setTodos]  = useState([
-  //   { id: '1', text: 'Buy groceries' ,liked:false},
-  //   { id: '2', text: 'Walk the dog',liked:false },
-  //   { id: '3', text: 'Read a book',liked:false },
-  // ])
-
  const handleClearAll = () =>   {
    const clear = removeAllTasks();
    setTasks(clear);
@@ -87,7 +80,6 @@ const removeTaskbutton = (taskId) => {
         value={taskText}
         onChangeText={(value)=> setTaskText(value)}
         />
-        
       </KeyboardAvoidingView>  
     </View>
   )

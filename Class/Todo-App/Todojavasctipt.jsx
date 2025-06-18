@@ -14,7 +14,7 @@ export function toggleLike(id) {
     );
     return getTasks();
   }
-// to add tasks 
+// to add tasks mj
 export function addTask(text, liked = false) {
   const newTask = {
     id: Date.now(),
