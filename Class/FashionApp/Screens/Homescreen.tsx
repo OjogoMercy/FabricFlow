@@ -94,7 +94,6 @@ const Homescreen = ({navigation}) => {
         />
         <Ionicons name='mic' size={20} color={'gray'}/>
        </View>
-    
     <FlatList
         data={products}
         keyExtractor={(item) => item.id.toString()}

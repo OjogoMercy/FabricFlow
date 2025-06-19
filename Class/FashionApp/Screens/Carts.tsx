@@ -1,5 +1,5 @@
 import { Image, Text, TouchableOpacity, View,FlatList } from 'react-native'
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useEffect, useState } from 'react'
 import general from '../Constants/General'
 import { Ionicons,AntDesign } from '@expo/vector-icons'
 import Header from '../Components/Header'
@@ -8,13 +8,23 @@ import BottomSheet from '@gorhom/bottom-sheet';
 
 
 const Carts = ({ navigation }) => {
-  
+  const [products,setProducts] = useState([])
+  const fetchProducts = () => {
+    fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+    .then((data) => {
+      setProducts(data);
+       })
+  }
+  useEffect(() => {
+    fetchProducts();
+  }, [])
 
 
   const renderItem =({item}) => (
     <TouchableOpacity activeOpacity={0.7} style={general.long}>
     <Image
-      source={{ uri:item.imageUrl }}
+      source={{ uri:item.image }}
       style={general.img}
     />
     <View style={general.details}>
@@ -27,7 +37,7 @@ const Carts = ({ navigation }) => {
         <Text style={general.meta}>Color (White)</Text>
       </View>
       <View style={general.rowBetween}>
-        <Text style={general.price}>$345</Text>
+          <Text style={general.price}>${ item.price}</Text>
         <View style={general.counter}>
           <AntDesign name="minus" size={16} color="red" />
           <Text style={general.qty}>2</Text>
@@ -41,7 +51,7 @@ const Carts = ({ navigation }) => {
     <View style={general.container1}>
       <Header title='Carts'/>
      <FlatList
-     data={clothingData}
+     data={products}
      renderItem={renderItem}
      showsVerticalScrollIndicator={false}
      />
