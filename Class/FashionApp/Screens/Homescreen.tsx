@@ -10,8 +10,14 @@ import { StatusBar } from 'react-native'
 
 const Homescreen = ({navigation}) => {
   const [active,setActive] = useState('All')
-  const tabs = ['All','Men','Women','Kids',];
+  const tabs = ['All', 'Men', 'Women', 'Kids',];
+  
 
+  const fetchProducts = () => {
+  fetch('https://fakestoreapi.com/products/1')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+}
   const renderItem = ({ item }) => (
     <View style={general.con}>
       <StatusBar  backgroundColor={"white"} barStyle={'dark-content'}/>

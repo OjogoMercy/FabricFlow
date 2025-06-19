@@ -1,16 +1,16 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer,NavigationIndependentTree } from '@react-navigation/native';
-import SignUp from '../Class/Regular/SignUp';
-import SignIn from '../Class/Regular/SignIn';
-import Flexbox from '../Class/Regular/Flexbox';
-import Index from '../Class/Regular/Index';
-import Register from '../Class/Regular/Register';
-import Forgot from '../Class/Regular/Forgot';
-import Welcome from '../Class/Regular/Welcome';
-import Whatsapp from '../Class/Regular/Whatsapp';
-import Instagram from '../Class/Regular/Instagram';
-import Twitter from '../Class/Regular/Twitter';
+import SignUp from '../Class/SignUp';
+import SignIn from '../Class/SignIn';
+import Flexbox from '../Class/Flexbox';
+import Index from '../Class/Index';
+import Register from '../Class/Register';
+import Forgot from '../Class/FashionApp/Forgot';
+import Welcome from '../Class/Welcome';
+import Whatsapp from '../Class/Whatsapp';
+import Instagram from '../Class/Instagram';
+import Twitter from '../Class/Twitter';
 import Succesful from '../Class/FashionApp/Screens/Succesful';
 import Signin from '../Class/FashionApp/Screens/Sign-In';
 import Signup from '../Class/FashionApp/Screens/Sign-Up';
@@ -30,7 +30,7 @@ export default function StackNavigator() {
   return (
  <NavigationIndependentTree>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Todo" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false}}>
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />

@@ -8,6 +8,7 @@ import { StatusBar } from 'react-native';
 
 const Forgot = ({navigation}) => {
   const [email, setEmail] = useState('');
+  const [products,setProducts] = useState([])
   return (
     <View style={styles.Container}>
       <Image style={{height:120,width:120,marginTop:80}} source={logo}/>

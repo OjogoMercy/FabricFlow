@@ -2,9 +2,9 @@ import {Text, View ,ScrollView, TouchableOpacity,FlatList,Image} from 'react-nat
 import React from 'react'
 import { MaterialIcons ,Feather,MaterialCommunityIcons} from '@expo/vector-icons';
 import { useState } from 'react';
-import styles from '../../constants/Styles';
+import styles from '../constants/Styles';
 import { StatusBar } from 'react-native';
-import ChatData from '../../constants/ChatData';
+import ChatData from '../constants/ChatData';
 import message from '../assets/images/icons8-add-chat-48.png'
 
 const Whatsapp = () => {

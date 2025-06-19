@@ -3,7 +3,7 @@ import React from 'react'
 import { MaterialIcons ,Feather,MaterialCommunityIcons,AntDesign,FontAwesome,Ionicons,Entypo} from '@expo/vector-icons';
 import { useState } from 'react';
 import { StatusBar} from 'react-native';
-import ChatData from '../../constants/ChatData';
+import ChatData from '../constants/ChatData';
 import instagram from '../assets/images/instagram.png'
 import { LinearGradient } from 'expo-linear-gradient';
 import play from '../assets/images/icons8-instagram-reels-50.png'
