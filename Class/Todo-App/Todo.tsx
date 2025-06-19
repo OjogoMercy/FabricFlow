@@ -9,7 +9,7 @@ export default function Todo() {
   const [tasks, setTasks] = useState(Tasks);
   const [taskText, setTaskText] = useState('');
   const [darkMode, setDarkmode] = useState(false)
-  const theme = darkMode ? Theme.lightTheme : Theme.darkTheme;
+  const theme = darkMode ? Theme.darkTheme : Theme.lightTheme;
  const handleClearAll = () =>   {
    const clear = removeAllTasks();
    setTasks(clear);
