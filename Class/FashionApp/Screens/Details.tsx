@@ -26,7 +26,7 @@ export default function Details({route,navigation}) {
       <StatusBar translucent backgroundColor={'transparent'} barStyle={'dark-content'}/>
       {item && (
       <>
-      <Image source={{ uri: item.imageUrl }} style={{ height: "50%", width: "100%",borderBottomLeftRadius:20,borderBottomRightRadius:20 }} />
+      <Image source={{ uri: item.image }} style={{ height: "50%", width: "100%",borderBottomLeftRadius:20,borderBottomRightRadius:20}} />
       <View style={general.high}>
           <TouchableOpacity onPress={() => navigation.goBack()} style={general.float1}>
             <Ionicons name="chevron-back" size={20} color={'black'} />
@@ -67,7 +67,7 @@ export default function Details({route,navigation}) {
           <Text style={general.bigtext}>Description</Text>
            <Text style={{fontSize:15,marginTop:10}}>{item.description}</Text>
            <View style={general.space}>
-            <Text style={{color:Colors.primary, fontSize:16, fontWeight:'bold'}}>$435</Text>
+              <Text style={{ color: Colors.primary, fontSize: 16, fontWeight: 'bold' }}>${ item.price}</Text>
          <TouchableOpacity style={[general.button, {width:'60%', height:45}]} onPress={() => navigation.navigate('Carts')}>
           <Text style={general.buttontext}>Buy Now</Text>
           </TouchableOpacity>           

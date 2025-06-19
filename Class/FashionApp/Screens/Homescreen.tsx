@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View,FlatList, SafeAreaView } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import general from '../Constants/General'
 import Colors from '../Constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
@@ -11,22 +11,31 @@ import { StatusBar } from 'react-native'
 const Homescreen = ({navigation}) => {
   const [active,setActive] = useState('All')
   const tabs = ['All', 'Men', 'Women', 'Kids',];
-  
+  const [products, setProducts] = useState([])
+
+  console.log('........................', products)
+  useEffect(() => {
+    fetchProducts();
+  } ,[]);
 
   const fetchProducts = () => {
-  fetch('https://fakestoreapi.com/products/1')
+  fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
-            .then(json=>console.log(json))
+      // .then(json => console.log(json))
+    .then((data) => {
+      setProducts(data);
+       })
 }
   const renderItem = ({ item }) => (
     <View style={general.con}>
       <StatusBar  backgroundColor={"white"} barStyle={'dark-content'}/>
       <TouchableOpacity activeOpacity={0.7} style={general.card} onPress={() => navigation.navigate('Details', {item})} >
-      <Image source={{ uri: item.imageUrl }} style={general.image} />
+      <Image source={{ uri: item.image }} style={general.image} />
       <View style={general.float}> <Ionicons name='heart' color={Colors.primary} size={20}/></View>
       <View style={{paddingHorizontal:5,}}>
-      <Text style={general.name}>{item.name} <Text style={{fontWeight:'bold',color:Colors.primary}}>  $373</Text></Text>
-      <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}> 
+          <Text style={[general.name]} numberOfLines={1}>{item.title} </Text>
+          <Text style={{ fontWeight: 'bold', color: Colors.primary }}>${item.price}</Text>
+      <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:5}}> 
       <Ionicons name='star' color={Colors.primary} size={24}/>
       <View style={{height:30,width:30,borderRadius:30,backgroundColor:Colors.primary,alignItems:'center',justifyContent:'center'}}>  
         <Ionicons name='briefcase-outline' color={'white'} size={20}/></View>
@@ -88,7 +97,8 @@ const Homescreen = ({navigation}) => {
        </View>
     
     <FlatList
-        data={Clothes}
+        data={products}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
         contentContainerStyle={{
           paddingVertical: 0,
