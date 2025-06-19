@@ -13,7 +13,6 @@ const Homescreen = ({navigation}) => {
   const tabs = ['All', 'Men', 'Women', 'Kids',];
   const [products, setProducts] = useState([])
 
-  console.log('........................', products)
   useEffect(() => {
     fetchProducts();
   } ,[]);

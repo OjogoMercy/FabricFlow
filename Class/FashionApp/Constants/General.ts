@@ -207,8 +207,7 @@ const general = StyleSheet.create({
         marginTop:10
       },
       space:{justifyContent:'space-between',
-      position:'absolute',
-      bottom:10,
+      alignSelf:'baseline',
       width:'100%',
       flexDirection:'row',
       alignItems:'center',

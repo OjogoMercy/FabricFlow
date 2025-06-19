@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View,FlatList, SafeAreaView } from 'react-native'
+import { Image, StyleSheet, Text, ScrollView, TouchableOpacity, View,FlatList,  } from 'react-native'
 import React, { useCallback } from 'react'
 import general from '../Constants/General'
 import Colors from '../Constants/Colors'
@@ -46,7 +46,8 @@ export default function Details({route,navigation}) {
       <Text style={general.reviewText}>2038 Reviews</Text>
     </View>
           </View>
-          <View style={{padding:10,flex:1}}>
+          <ScrollView showsVerticalScrollIndicator={false}>
+  <View style={{padding:10,flex:1}}>
           <Text style={general.bigtext}>Select your size</Text>
           <View style={{marginTop:10, flexDirection:'row',justifyContent:'space-between'}}>
           <View style={{flexDirection:'row',gap:10}}>
@@ -62,17 +63,21 @@ export default function Details({route,navigation}) {
             </TouchableOpacity>
           ))}
           </View>
-          <View style={{height:35, backgroundColor:'#ddd',borderRadius:5, alignItems:'center', justifyContent:'center'}}><Text>     -      2     +    </Text></View>
+              <View style={{ height: 35, backgroundColor: '#ddd', borderRadius: 5, alignItems: 'center', justifyContent: 'center' }}><Text>     -      2     +    </Text>
+              </View>
           </View>
           <Text style={general.bigtext}>Description</Text>
            <Text style={{fontSize:15,marginTop:10}}>{item.description}</Text>
+          
+          </View>
+          </ScrollView>
            <View style={general.space}>
               <Text style={{ color: Colors.primary, fontSize: 16, fontWeight: 'bold' }}>${ item.price}</Text>
          <TouchableOpacity style={[general.button, {width:'60%', height:45}]} onPress={() => navigation.navigate('Carts')}>
           <Text style={general.buttontext}>Buy Now</Text>
           </TouchableOpacity>           
            </View>
-          </View>
+        
 
           </>
       )}
