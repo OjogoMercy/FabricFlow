@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 export default function Todo() {
-  const [tasks, setTasks] = useState(Tasks);
+  const [tasks, setTasks] = useState([]);
   const [taskText, setTaskText] = useState('');
   const [darkMode, setDarkmode] = useState(false)
   const theme = darkMode ? Theme.darkTheme : Theme.lightTheme;
@@ -91,7 +91,8 @@ const removeTaskbutton = (taskId) => {
 <View style={{flexDirection:'row',gap:10}}>
 <TouchableOpacity onPress={() => {
         toggleLike(item.id);
-        setTasks(getTasks());
+          setTasks(getTasks());
+          storeTasks(getTasks())
       }}>
         <Ionicons name={item.liked ? 'checkbox' : 'square-outline'} size={20} color={item.liked ? '#E2725B' : '#555'} />
       </TouchableOpacity>
@@ -102,9 +103,6 @@ const removeTaskbutton = (taskId) => {
     </View>
   )} />
       <KeyboardAvoidingView style={[styles.starsRow,{alignSelf:'baseline',backgroundColor:theme.inputBackground}]}>
-        <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
-            <Ionicons name='add' size={20} color='white'/>
-        </TouchableOpacity>
         <TextInput 
         placeholder='Input'
         placeholderTextColor={'#ccc'}
@@ -112,6 +110,9 @@ const removeTaskbutton = (taskId) => {
         value={taskText}
         onChangeText={(value)=> setTaskText(value)}
         />
+        <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
+        <Ionicons name='add' size={20} color='white'/>
+        </TouchableOpacity>
       </KeyboardAvoidingView>  
     </View>
   )
