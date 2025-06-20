@@ -3,6 +3,8 @@ import React,{useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, removeAllTasks,getTasks,toggleLike,removeTask} from './Todojavasctipt'
 import Theme from './Colors'
+import { styles } from './Styles'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 export default function Todo() {
@@ -10,6 +12,16 @@ export default function Todo() {
   const [taskText, setTaskText] = useState('');
   const [darkMode, setDarkmode] = useState(false)
   const theme = darkMode ? Theme.darkTheme : Theme.lightTheme;
+
+  const storeData = async (value) => {
+    try { 
+      const jsonvalue = JSON.stringify(value);
+      await AsyncStorage.setItem('my-Tasks',jsonvalue)
+    }
+    catch (e) {
+      console.log(e);
+    }
+  }
  const handleClearAll = () =>   {
    const clear = removeAllTasks();
    setTasks(clear);
@@ -43,7 +55,6 @@ const removeTaskbutton = (taskId) => {
             <Ionicons name='trash-outline' size={20} color='white'/>
         </TouchableOpacity>
         </View>
-       
       </View>
       <FlatList
   data={tasks}
@@ -65,10 +76,8 @@ const removeTaskbutton = (taskId) => {
       <Ionicons name='trash-outline' size={20} color='#E2725B'/>
       </TouchableOpacity>
 </View>
-     
     </View>
-  )}
-      />
+  )} />
       <KeyboardAvoidingView style={[styles.starsRow,{alignSelf:'baseline',backgroundColor:theme.inputBackground}]}>
         <TouchableOpacity activeOpacity={0.7} style={styles.float1} onPress={handleTask}>
             <Ionicons name='add' size={20} color='white'/>
@@ -84,64 +93,3 @@ const removeTaskbutton = (taskId) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container1:{
-    flex: 1,
-      backgroundColor:'#fff',
-      padding: 15,
-  },
-  bigtext:{
-    color: '#555',
-      fontSize: 24,
-      fontWeight: 'bold',
-  },
-  toggle: {
-    backgroundColor: '#E2725B',
-    alignItems:'center',
-    alignSelf: 'center',
-    justifyContent:'center',
-    padding: 15,
-    borderRadius:10
-  },
-  starsRow: {
-    flexDirection: 'row',
-    marginBottom: 5,
-    borderColor:'#ccc',
-    borderRadius:25,
-    borderWidth:2,
-    padding:7,
-    alignSelf:'center',
-  },
-  float1:{
-    height:40,
-    width:40,
-    borderRadius:25,
-    backgroundColor:'#E2725B',
-    justifyContent:'center',
-    alignItems:'center',
-    elevation: 3,
-    marginLeft:7
-   
-   },
-   inputcontainer:{
-    padding:8,
-    width:'85%',
-  },
-  likedText: {
-    textDecorationLine: 'line-through',
-    color: '#E2725B', 
-  },
-  todoItem: {
-    padding: 15,
-    marginBottom: 10,
-    backgroundColor: '#f2f2f2',
-    borderRadius: 8,
-    justifyContent:'space-between',
-    flexDirection:'row'
-  },
-  todoText: {
-    fontSize: 16,
-    color:'black'
-  },
-})

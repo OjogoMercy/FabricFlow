@@ -30,7 +30,7 @@ export default function StackNavigator() {
   return (
  <NavigationIndependentTree>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Todo" screenOptions={{headerShown: false}}>
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />
