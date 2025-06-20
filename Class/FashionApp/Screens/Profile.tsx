@@ -19,7 +19,7 @@ const Profile = () => {
     <View style={general.container1}>
       <Header title='Profile'/>
       <Image source={{uri:'https://img.freepik.com/free-photo/young-beautiful-african-american-afro-woman-with-curly-hair-wearing-blue-turtleneck-sweater-looking-confident-camera-with-smile-with-crossed-arms-hand-raised-chin-thinking-positive_839833-30965.jpg?ga=GA1.1.1815210685.1744673214&semt=ais_items_boosted&w=740'}} style={general.profile}/>
-      <Text style={{textAlign:'center',fontSize:15,fontWeight:'bold'}}> Ojogo Mercy</Text>
+      <Text style={{textAlign:'center',fontSize:15,fontWeight:'bold',margin:5}}> Ojogo Mercy</Text>
       <Text style={{textAlign:"center",color:'#222'}}>mercyojogo@gmail.com</Text>
       <FlatList
         data={data}
