@@ -20,11 +20,11 @@ export default function Todo() {
       await AsyncStorage.setItem('my-Tasks',jsonValue)
     }
     catch (e) {
-      console.log('Error saving tasks',e){};
+      console.log('Error saving tasks',e);
     }
   }
   // to return stored tasks
-  const getTasks = async () => {
+  const recieveTasks = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('my-Tasks');
       return jsonValue != null ? JSON.parse(jsonValue) : null; 
@@ -37,7 +37,7 @@ export default function Todo() {
   // to render it when the app starts
   useEffect(() => {
     const fetchTasks = async () => {
-      const savedTasks = await getTasks();
+      const savedTasks = await recieveTasks();
       setTasks(savedTasks)
     }
     fetchTasks();
@@ -45,11 +45,13 @@ export default function Todo() {
  const handleClearAll = () =>   {
    const clear = removeAllTasks();
    setTasks(clear);
+   storeTasks(clear);
  }
  const handleTask = () => {
   if (taskText.trim()) {
     const updatedTask = addTask(taskText);
     setTasks(updatedTask); 
+    storeTasks(updatedTask)
     setTaskText('');
   }
 };
@@ -60,6 +62,7 @@ export default function Todo() {
 const removeTaskbutton = (taskId) => {
   const updatedTasks = removeTask(taskId);
   setTasks(updatedTasks)
+  storeTasks(updatedTasks)
 };
  
   return (
