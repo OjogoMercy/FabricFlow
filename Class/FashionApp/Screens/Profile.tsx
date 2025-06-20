@@ -1,6 +1,5 @@
-import { Ionicons,FontAwesome,AntDesign } from '@expo/vector-icons'
+import { Ionicons,FontAwesome,AntDesign, FontAwesome5, Feather, FontAwesome6, MaterialCommunityIcons  } from '@expo/vector-icons'
 import { Image, Text, TextInput, TouchableOpacity, View,FlatList, SafeAreaView } from 'react-native'
-import { FontAwesome5, Feather, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons';
 import Header from '../Components/Header'
 import general from '../Constants/General'
 import Colors from '../Constants/Colors'

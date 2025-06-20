@@ -3,7 +3,7 @@ import React from 'react'
 import logo from '../../assets/images/icons8-security-shield-100.png'
 import { MaterialIcons } from '@expo/vector-icons';
 import { useState } from 'react';
-import styles from '../../constants/Styles';
+import styles from '../../navigation/constants/Styles';
 import { StatusBar } from 'react-native';
 
 const Forgot = ({navigation}) => {

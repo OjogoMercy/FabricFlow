@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '@/constants/Styles';
+import styles from '@/navigation/constants/Styles';
 
 const Input = ({
   value,placeholder,keyboardType,onChangeText,IconName, name,
