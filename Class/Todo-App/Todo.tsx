@@ -1,5 +1,5 @@
 import { View, Text, TextInput ,StyleSheet,FlatList,TouchableOpacity, StatusBar, KeyboardAvoidingView } from 'react-native'
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, removeAllTasks,getTasks,toggleLike,removeTask} from './Todojavasctipt'
 import Theme from './Colors'
@@ -13,15 +13,35 @@ export default function Todo() {
   const [darkMode, setDarkmode] = useState(false)
   const theme = darkMode ? Theme.darkTheme : Theme.lightTheme;
 
-  const storeData = async (value) => {
+  // to store tasks in AsyncStorage
+  const storeTasks = async (value) => {
     try { 
-      const jsonvalue = JSON.stringify(value);
-      await AsyncStorage.setItem('my-Tasks',jsonvalue)
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('my-Tasks',jsonValue)
     }
     catch (e) {
-      console.log(e);
+      console.log('Error saving tasks',e){};
     }
   }
+  // to return stored tasks
+  const getTasks = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem('my-Tasks');
+      return jsonValue != null ? JSON.parse(jsonValue) : null; 
+    }
+    catch (e) {
+      console.log('Error retrieving tasks', e);
+      return [];
+    }
+  }
+  // to render it when the app starts
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const savedTasks = await getTasks();
+      setTasks(savedTasks)
+    }
+    fetchTasks();
+  }, []);
  const handleClearAll = () =>   {
    const clear = removeAllTasks();
    setTasks(clear);
