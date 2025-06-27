@@ -17,7 +17,7 @@ import Signup from '../Class/FashionApp/Screens/Sign-Up';
 import Splash from '../Class/FashionApp/Screens/Splash';
 import Verification from '../Class/FashionApp/Screens/Verification';
 import IntroScreen from '../Class/FashionApp/Screens/IntroScreen';
-import Bottomtab from './../Class/FashionApp/Bottomtab'
+import Bottomtab from '../Class/FashionApp/Screens/Bottomtab'
 import Details from '@/Class/FashionApp/Screens/Details';
 import Carts from '@/Class/FashionApp/Screens/Carts';
 import Sheet from '@/Class/FashionApp/Screens/sheet';

@@ -4,11 +4,11 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import Carts from './Screens/Carts';
-import Favourites from './Screens/Favourites';
-import Profile from './Screens/Profile';
-import Homescreen from './Screens/Homescreen';
-import Colors from './Constants/Colors';
+import Carts from './Carts';
+import Favourites from './Favourites';
+import Profile from './Profile';
+import Homescreen from './Homescreen';
+import Colors from '../Constants/Colors';
 
 const Tab = createBottomTabNavigator();
 export default function App() {
