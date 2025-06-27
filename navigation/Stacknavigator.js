@@ -22,6 +22,7 @@ import Details from '@/Class/FashionApp/Screens/Details';
 import Carts from '@/Class/FashionApp/Screens/Carts';
 import Sheet from '@/Class/FashionApp/Screens/sheet';
 import Todo from '@/Class/Todo-App/Todo';
+import FashionNav from '@/Class/FashionApp/FashionNavigator';
 
 
 const Stack = createNativeStackNavigator();
@@ -30,8 +31,8 @@ export default function StackNavigator() {
   return (
  <NavigationIndependentTree>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Todo" screenOptions={{headerShown: false}}>
-        <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Navigator initialRouteName="FashionNav" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />
         <Stack.Screen name="Index" component={Index} />
@@ -43,6 +44,7 @@ export default function StackNavigator() {
         {/* Fashion App */}
         <Stack.Screen name="Succesful" component={Succesful} />
         <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="FashionNav" component={FashionNav} />
         <Stack.Screen name="Verification" component={Verification} />
         <Stack.Screen name="IntroScreen" component={IntroScreen} />
         <Stack.Screen name="Signup" component={Signup} />
