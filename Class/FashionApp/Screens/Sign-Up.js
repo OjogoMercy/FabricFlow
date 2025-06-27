@@ -3,12 +3,27 @@ import React, { useState } from 'react'
 import general from '../Constants/General'
 import Button from '../Components/Button'
 import Input from '@/components/textinputs'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { FIREBASE_AUTH } from '../Authentication/Firebase'
 
 const Signup = ({ navigation }) => {
-  const [Name, setName] = useState(null)
+  const [Name, setName] = useState(null)  
   const [password, setPassword] = useState()
   const [email, setEmail] = useState()
   
+  const Create = async () => {
+    setLoading(true);
+    try{
+      const response = await createUserWithEmailAndPassword(auth, email, password)
+      alert('Check your email')
+    } catch (error) {
+      alert('User not logged in')
+      console.log('Error when loading!')
+    } finally {
+      setLoading(false)
+    }
+}
+
   return (
     <SafeAreaView style={general.container}>
       <Text style={general.down}>Register</Text>
@@ -23,6 +38,7 @@ const Signup = ({ navigation }) => {
       <Input value={password} onChangeText={setPassword} name={'Password'} isPassword={ true} placeholder={'Enter your password'} />
       </View>
       </View>
+      
       <Button title="Sign Up" onPress={() => navigation.navigate("Verification")}/>
       <View style={{position:'absolute',bottom:20}}>
         <Text style={{ textAlign: 'center' }}>Already have an Account?

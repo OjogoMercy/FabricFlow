@@ -4,12 +4,11 @@ import general from '../Constants/General'
 import Button from '../Components/Button'
 import Input from '@/components/textinputs'
 import { FIREBASE_AUTH } from '../Authentication/Firebase'
-
+import { signInWithEmailAndPassword } from 'firebase/auth'
 const Signin = ({ navigation }) => {
    const [Name, setName] = useState(null)
   const [password, setPassword] = useState()
   const [email, setEmail] = useState()
-  const auth = FIREBASE_AUTH
   return (
     <SafeAreaView style={general.container}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'}/>
