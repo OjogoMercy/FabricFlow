@@ -16,7 +16,7 @@ import Forgot from "./Forgot";
 const FashionNavigator = createNativeStackNavigator()
 export default function FashionNav() {
     return (
-            <FashionNavigator.Navigator initialRouteName="Splash">
+            <FashionNavigator.Navigator initialRouteName="Splash" screenOptions={{headerShown:false}}>
                 <FashionNavigator.Screen name="Homescreen" component={Homescreen} />
                 <FashionNavigator.Screen name="Carts" component={Carts} />
                 <FashionNavigator.Screen name="Details" component={Details} />
