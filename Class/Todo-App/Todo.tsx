@@ -2,11 +2,9 @@ import { View, Text, TextInput ,StyleSheet,FlatList,TouchableOpacity, StatusBar,
 import React,{useEffect, useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import {Tasks, addTask, removeAllTasks,getTasks,toggleLike,removeTask} from './Todojavasctipt'
-import Theme from './Colors'
-import { styles } from './Styles'
+import Theme from './Constants/Colors'
+import { styles } from './Constants/Styles'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-
-
 export default function Todo() {
   const [tasks, setTasks] = useState([]);
   const [taskText, setTaskText] = useState('');
@@ -102,7 +100,7 @@ const removeTaskbutton = (taskId) => {
 </View>
     </View>
   )} />
-      <KeyboardAvoidingView style={[styles.starsRow,{alignSelf:'baseline',backgroundColor:theme.inputBackground}]}>
+      <KeyboardAvoidingView  style={[styles.starsRow,{alignSelf:'baseline',backgroundColor:theme.inputBackground}]} behaviour="padding">
         <TextInput 
         placeholder='Input'
         placeholderTextColor={'#ccc'}
