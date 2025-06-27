@@ -1,36 +1,25 @@
-import { StyleSheet, Text, View ,StatusBar, TextInput,SafeAreaView,Image, TouchableOpacity} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View ,StatusBar,SafeAreaView,Image, } from 'react-native'
+import React, {useState} from 'react'
 import general from '../Constants/General'
 import Button from '../Components/Button'
+import Input from '@/components/textinputs'
 
-const Signin = ({navigation}) => {
+const Signin = ({ navigation }) => {
+   const [Name, setName] = useState(null)
+  const [password, setPassword] = useState()
+  const [email, setEmail] = useState()
   return (
     <SafeAreaView style={general.container}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'}/>
       <Text style={general.down}>Sign In</Text>
-      <View style={general.inputcontainer}>
-        <Text>Full Name</Text>
-        <TextInput
-        style={general.input}
-        placeholder='Enter your Name'
-        placeholderTextColor={'gray'}
-        />
+       <View style={general.inputcontainer}>
+          <Input placeholder={'Name'} value={Name} onChangeText={setName}  name={'FullName'}/>
       </View>
       <View style={general.inputcontainer}>
-        <Text>Email</Text>
-        <TextInput
-        style={general.input}
-        placeholder='Enter your Email'
-        placeholderTextColor={'gray'}
-        />
+          <Input value={email} onChangeText={setEmail} name={'Email'} isPassword={ true} placeholder={'Enter your email'} />
       </View>
       <View style={general.inputcontainer}>
-        <Text>Password</Text>
-        <TextInput
-        style={general.input}
-        placeholder='Enter your Password'
-        placeholderTextColor={'gray'}
-        />
+      <Input value={password} onChangeText={setPassword} name={'Password'} isPassword={ true} placeholder={'Enter your password'} />
       </View>
       <View style={{flexDirection:'row',width:'100%',alignItems:'center',justifyContent:'center',marginTop:10}}>
         <View style={{height:1,width:'35%',backgroundColor:'black'}}/>

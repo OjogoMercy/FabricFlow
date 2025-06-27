@@ -25,19 +25,16 @@ label: {
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#222',
+    backgroundColor: '#ddd',
     paddingHorizontal: 10,
-    borderRadius: 30,
+    borderRadius: 10,
     height: 50,
-    width:'100%',
-    borderWidth:1,
-    borderColor:'#444',
-    marginBottom:10
+    width: '100%',
+    marginTop:10
   },
   input: {
     flex: 1,
     color: '#fff',
-    marginLeft: 8,
   },
   icon: {
     marginRight: 4,
