@@ -23,7 +23,7 @@ const Input = ({
           placeholder={placeholder}
           secureTextEntry={isPassword ? hidePassword : false}
           style={styles.input}
-          keyboardType={keyboardType}
+          keyboardType='default'
           placeholderTextColor={'#888'}
           onChangeText={onChangeText}
         />

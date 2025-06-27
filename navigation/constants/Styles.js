@@ -34,7 +34,7 @@ label: {
   },
   input: {
     flex: 1,
-    color: '#fff',
+    color: '#000',
   },
   icon: {
     marginRight: 4,
