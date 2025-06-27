@@ -1,4 +1,3 @@
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Homescreen from './Screens/Homescreen'
 import Carts from "./Screens/Carts";
@@ -17,7 +16,6 @@ import Forgot from "./Forgot";
 const FashionNavigator = createNativeStackNavigator()
 export default function FashionNav() {
     return (
-        <NavigationContainer >
             <FashionNavigator.Navigator initialRouteName="Splash">
                 <FashionNavigator.Screen name="Homescreen" component={Homescreen} />
                 <FashionNavigator.Screen name="Carts" component={Carts} />
@@ -26,12 +24,12 @@ export default function FashionNav() {
                 <FashionNavigator.Screen name="Profile" component={Profile} />
                 <FashionNavigator.Screen name="IntroScreen" component={IntroScreen} />
                 <FashionNavigator.Screen name="Signin" component={Signin} />
+                <FashionNavigator.Screen name="Signup" component={Signup} />
                 <FashionNavigator.Screen name="Bottomtab" component={Bottomtab} />
                 <FashionNavigator.Screen name="Splash" component={Splash} />
                 <FashionNavigator.Screen name="Verification" component={Verification} />
                 <FashionNavigator.Screen name="Succesful" component={Succesful} />
                 <FashionNavigator.Screen name="Forgot" component={Forgot} />
            </FashionNavigator.Navigator>
-        </NavigationContainer>
     )
 }   

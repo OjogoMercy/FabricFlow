@@ -1,10 +1,11 @@
 import { Stack } from "expo-router";
-import { GestureHandlerRootView } from 'react-native-gesture-handler';  
-
+import StackNavigator from "@/navigation/Stacknavigator";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function RootLayout() {
-  return(
-   <Stack  screenOptions={{ headerShown: false }}/>)
-
-  ;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
