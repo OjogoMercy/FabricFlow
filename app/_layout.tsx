@@ -1,14 +1,9 @@
-import StackNavigator from "@/navigation/Stacknavigator";
 import React from "react";
-import { NavigationContainer,NavigationIndependentTree } from "@react-navigation/native";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
-    <NavigationIndependentTree>
-  <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
-    </NavigationIndependentTree>
+    <Stack screenOptions={{headerShown:false}}/>
   
   );
 }

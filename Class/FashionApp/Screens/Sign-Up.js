@@ -10,11 +10,12 @@ const Signup = ({ navigation }) => {
   const [Name, setName] = useState(null)  
   const [password, setPassword] = useState()
   const [email, setEmail] = useState()
+  const [loading, setLoading] = useState(false)
   
-  const Create = async () => {
+    const Create = async () => {
     setLoading(true);
     try{
-      const response = await createUserWithEmailAndPassword(auth, email, password)
+      const response = await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password)
       alert('Check your email')
     } catch (error) {
       alert('User not logged in')

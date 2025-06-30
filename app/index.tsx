@@ -5,10 +5,11 @@ import { NavigationContainer ,NavigationIndependentTree} from '@react-navigation
 
 const index = () => {
   return (
-  
-    <View>
-      <Text>helle</Text>
-  </View>
+    <NavigationIndependentTree>
+  <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+    </NavigationIndependentTree>
   );
 }
 
