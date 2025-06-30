@@ -6,13 +6,11 @@ import { NavigationContainer ,NavigationIndependentTree} from '@react-navigation
 const index = () => {
   return (
     <NavigationIndependentTree>
-  <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
-    </NavigationIndependentTree>
+      <NavigationContainer>
+        <StackNavigator/>
+      </NavigationContainer>
+  </NavigationIndependentTree>
   );
 }
 
 export default index
-
-const styles = StyleSheet.create({})

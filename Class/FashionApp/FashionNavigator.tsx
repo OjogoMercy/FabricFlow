@@ -5,7 +5,7 @@ import Details from "./Screens/Details";
 import Favourites from "./Screens/Favourites";
 import IntroScreen from "./Screens/IntroScreen";
 import Profile from "./Screens/Profile";
-import Signin from "./Screens/Sign-In";
+import Sign from "./Screens/Sign-In";
 import Signup from "./Screens/Sign-Up";
 import Bottomtab from './Screens/Bottomtab'
 import Splash from "./Screens/Splash";
@@ -23,7 +23,7 @@ export default function FashionNav() {
                 <FashionNavigator.Screen name="Favourites" component={Favourites} />
                 <FashionNavigator.Screen name="Profile" component={Profile} />
                 <FashionNavigator.Screen name="IntroScreen" component={IntroScreen} />
-                <FashionNavigator.Screen name="Signin" component={Signin} />
+                <FashionNavigator.Screen name="Sign" component={Sign} />
                 <FashionNavigator.Screen name="Signup" component={Signup} />
                 <FashionNavigator.Screen name="Bottomtab" component={Bottomtab} />
                 <FashionNavigator.Screen name="Splash" component={Splash} />

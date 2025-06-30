@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import general from '../Constants/General'
 import Button from '../Components/Button'
 import Input from '@/components/textinputs'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { FIREBASE_AUTH } from '../Authentication/Firebase'
+import SignIn from '@/Class/SignIn'
+// import { createUserWithEmailAndPassword } from 'firebase/auth'
+// import { FIREBASE_AUTH } from '../Authentication/Firebase'
 
 const Signup = ({ navigation }) => {
   const [Name, setName] = useState(null)  
@@ -12,18 +13,18 @@ const Signup = ({ navigation }) => {
   const [email, setEmail] = useState()
   const [loading, setLoading] = useState(false)
   
-    const Create = async () => {
-    setLoading(true);
-    try{
-      const response = await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password)
-      alert('Check your email')
-    } catch (error) {
-      alert('User not logged in')
-      console.log('Error when loading!')
-    } finally {
-      setLoading(false)
-    }
-}
+//     const Create = async () => {
+//     setLoading(true);
+//     try{
+//       const response = await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password)
+//       alert('Check your email')
+//     } catch (error) {
+//       alert('User not logged in')
+//       console.log('Error when loading!')
+//     } finally {
+//       setLoading(false)
+//     }
+// }
 
   return (
     <SafeAreaView style={general.container}>
@@ -40,7 +41,7 @@ const Signup = ({ navigation }) => {
       </View>
       </View>
       
-      <Button title="Sign Up" onPress={Create}/>
+      <Button title="Sign Up" onPress={() => navigation.navigate("Sign")}/>
       <View style={{position:'absolute',bottom:20}}>
         <Text style={{ textAlign: 'center' }}>Already have an Account?
           <Text style={{ color: '#803A32', fontWeight: 'bold' }}
