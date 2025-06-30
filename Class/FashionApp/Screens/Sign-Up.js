@@ -1,9 +1,8 @@
-import {Text, View , TextInput,SafeAreaView} from 'react-native'
+import {Text, View , TextInput,SafeAreaView,ScrollView, KeyboardAvoidingView} from 'react-native'
 import React, { useState } from 'react'
 import general from '../Constants/General'
 import Button from '../Components/Button'
 import Input from '@/components/textinputs'
-import SignIn from '@/Class/SignIn'
 // import { createUserWithEmailAndPassword } from 'firebase/auth'
 // import { FIREBASE_AUTH } from '../Authentication/Firebase'
 
@@ -11,7 +10,17 @@ const Signup = ({ navigation }) => {
   const [Name, setName] = useState(null)  
   const [password, setPassword] = useState()
   const [email, setEmail] = useState()
-  const [loading, setLoading] = useState(false)
+
+  const submit = () => {
+  const collectData = { 
+    Name: Name,
+    password: password,
+    email:email
+  }
+  console.log(collectData)    
+    }
+  
+  // const [loading, setLoading] = useState(false)
   
 //     const Create = async () => {
 //     setLoading(true);
@@ -24,12 +33,12 @@ const Signup = ({ navigation }) => {
 //     } finally {
 //       setLoading(false)
 //     }
-// }
+  // }
 
   return (
     <SafeAreaView style={general.container}>
       <Text style={general.down}>Register</Text>
-      <View style={{width:'100%',alignItems:'center',marginVertical:30}}>
+      <View style={{width:'100%',marginVertical:30,alignItems:'center'}} >
       <View style={general.inputcontainer}>
           <Input placeholder={'Name'} value={Name} onChangeText={setName}  name={'FullName'}/>
       </View>
@@ -40,7 +49,7 @@ const Signup = ({ navigation }) => {
       <Input value={password} onChangeText={setPassword} name={'Password'} isPassword={ true} placeholder={'Enter your password'} />
       </View>
       </View>
-      
+     
       <Button title="Sign Up" onPress={() => navigation.navigate("Sign")}/>
       <View style={{position:'absolute',bottom:20}}>
         <Text style={{ textAlign: 'center' }}>Already have an Account?
