@@ -4,7 +4,6 @@ import general from '../Constants/General'
 import { Ionicons,AntDesign } from '@expo/vector-icons'
 import Header from '../Components/Header'
 import clothingData from '../Constants/Clothing'
-import BottomSheet from '@gorhom/bottom-sheet';
 
 
 const Carts = ({ navigation }) => {
