@@ -26,7 +26,7 @@ const Favourites = ({navigation}) => {
     <TouchableOpacity activeOpacity={0.7} style={general.card} onPress={() => navigation.navigate('Details', {item})} >
     <Image source={{ uri: item.image}} style={general.image} />
     <View style={general.float}> <Ionicons name='heart' color={Colors.primary} size={20}/></View>
-    <View style={{paddingHorizontal:5,}}>
+    <View style={{paddingHorizontal:5,}}>    
           <Text style={general.name}>{item.name} <Text style={{ fontWeight: 'bold', color: Colors.primary }}>${ item.price}</Text></Text>
     <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:20}}> 
     <Ionicons name='star' color={Colors.primary} size={24}/>
