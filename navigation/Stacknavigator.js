@@ -12,12 +12,13 @@ import Instagram from '../Class/Instagram';
 import Twitter from '../Class/Twitter';
 import Todo from '@/Class/Todo-App/Todo';
 import FashionNav from '@/Class/FashionApp/FashionNavigator';
+import LoginTodo from '@/Class/Todo-App/Authstack/Login';
 
 const Stack = createNativeStackNavigator();
 
 export default function StackNavigator() {
   return (
-      <Stack.Navigator initialRouteName="FashionNav" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="LoginTodo" screenOptions={{headerShown: false}}>
         <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />
@@ -32,6 +33,7 @@ export default function StackNavigator() {
         {/* Fashion App */}
         <Stack.Screen name="Twitter" component={Twitter} />
         <Stack.Screen name="Todo" component={Todo} />
+        <Stack.Screen name="LoginTodo" component={LoginTodo} />
       </Stack.Navigator>
   );
 }
