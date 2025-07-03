@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import styles from '@/navigation/constants/Styles';
 
 const Input = ({
-  value,placeholder,keyboardType,onChangeText,IconName, name,
+  value,placeholder,onChangeText,IconName, name,
   isPassword = false,
 }) => {
   const [hidePassword, setHidePassword] = useState(isPassword);

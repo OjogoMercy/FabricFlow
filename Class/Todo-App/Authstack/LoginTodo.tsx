@@ -38,27 +38,38 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       };
       console.log(collectData);
       console.log("Submitting...");
-    }
-    try {
-      await AsyncStorage.setItem('User', JSON.stringify(collectData))
-      console.log(`Data collected...`)  
-      Alert.alert("Succesfully created")
-      navigation.navigate('Todo')
+    
+      try {
+        await AsyncStorage.setItem('User', JSON.stringify(collectData))
+        console.log(`Data collected...`)
+        Alert.alert("Succesfully created")
+        navigation.navigate('Todo')
+      }
+      catch (error) {
+        Alert.alert('Failed to save user data')
+        console.log("Error when saaing user data")
+      }
     }
   }
-
+  const fetchData = async () => {
+    const userData = await AsyncStorage.getItem('User');
+    if (userData) {
+      const parsed = JSON.parse(userData);
+      console.log("UserData has been parsed!")
+    }
+  }
   return (
     <SafeAreaView style={general.container}>
       <Text style={general.down}>Register</Text>
       <View style={{ width: '100%', marginVertical: 30, alignItems: 'center' }}>
         <View style={general.inputcontainer}>
-          <Input placeholder={'Name'} value={Name} onChangeText={setName} name={'FullName'} />
+          <Input placeholder={'Enter your fullname'} value={Name} onChangeText={setName} name={'FullName'} />
         </View>
         <View style={general.inputcontainer}>
           <Input value={email} onChangeText={setEmail} name={'Email'} placeholder={'Enter your email'} />
         </View>
         <View style={general.inputcontainer}>
-          <Input value={password} onChangeText={setPassword} name={'Password'} isPassword={true} placeholder={'Enter your password'} />
+          <Input value={password} onChangeText={setPassword} name={'Password'} isPassword={true} placeholder={'Enter your password'}  />
         </View>
       </View>
 
