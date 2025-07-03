@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import general from '../../FashionApp/Constants/General'
 import Button from '../../FashionApp/Components/Button'
 import Input from '@/components/textinputs'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import axios from 'axios'
 // import { createUserWithEmailAndPassword } from 'firebase/auth'
 // import { FIREBASE_AUTH } from '../Authentication/Firebase'
 
@@ -13,7 +15,7 @@ export default function LoginTodo({ navigation }) {
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // to collect ant validate the inputs of data
 
-  const Submit = () => {
+  const Submit = async () => {
     if (!Name?.trim()) {
       Alert.alert("Enter your Name");
     } else if (Name.trim().length < 3) {
@@ -36,6 +38,12 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       };
       console.log(collectData);
       console.log("Submitting...");
+    }
+    try {
+      await AsyncStorage.setItem('User', JSON.stringify(collectData))
+      console.log(`Data collected...`)  
+      Alert.alert("Succesfully created")
+      navigation.navigate('Todo')
     }
   }
 

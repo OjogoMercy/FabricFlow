@@ -22,9 +22,11 @@
     "@react-navigation/native": "^7.0.14",
     "@react-navigation/native-stack": "^7.2.0",
     "@twotalltotems/react-native-otp-input": "^1.3.11",
+    "axios": "^1.10.0",
     "expo": "53.0.13",
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.6",
+    "expo-dev-client": "~5.2.2",
     "expo-font": "~13.3.1",
     "expo-haptics": "~14.1.4",
     "expo-linear-gradient": "~14.1.5",
@@ -49,8 +51,7 @@
     "react-native-vector-icons": "^10.2.0",
     "react-native-web": "^0.20.0",
     "react-native-webview": "13.13.5",
-    "undefined": "\\",
-    "expo-dev-client": "~5.2.2"
+    "undefined": "\\"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
