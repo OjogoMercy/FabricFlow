@@ -12,7 +12,7 @@ import Instagram from '../Class/Instagram';
 import Twitter from '../Class/Twitter';
 import Todo from '@/Class/Todo-App/Todo';
 import FashionNav from '@/Class/FashionApp/FashionNavigator';
-import LoginTodo from '@/Class/Todo-App/Authstack/Login';
+import LoginTodo from '@/Class/Todo-App/Authstack/LoginTodo';
 
 const Stack = createNativeStackNavigator();
 
