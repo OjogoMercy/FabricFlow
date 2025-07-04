@@ -16,7 +16,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // to collect ant validate the inputs of data
 
   const Submit = async () => {
-    if (!Name?.trim()) {
+    if (!Name.trim()) {
       Alert.alert("Enter your Name");
     } else if (Name.trim().length < 3) {
       Alert.alert("Name cannot be less than 3 characters")
@@ -31,19 +31,22 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       Alert.alert("Enter a password")
     } else {
       const collectData = {
-        id: Math.random,
-        Name: Name.trim(),
-        password: password,
+        id: Math.random.toString(),
+        username: Name.trim(),
         email: email.trim(),
+        password: password,
       };
       console.log(collectData);
       console.log("Submitting...");
     
       try {
-        await AsyncStorage.setItem('User', JSON.stringify(collectData))
-        console.log(`Data collected...`)
-        Alert.alert("Succesfully created")
+        const response = await axios.post('https://fakestoreapi.com/users', collectData)
+        if (response.status === 201 || response.status === 201) {
+          Alert.alert("User created successfully!")
         navigation.navigate('Todo')
+        await AsyncStorage.setItem('User', JSON.stringify(collectData))
+        }else{Alert.alert("User has not been created")}
+        console.log(`Data collected...`)
       }
       catch (error) {
         Alert.alert('Failed to save user data')
