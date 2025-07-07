@@ -9,9 +9,9 @@ import axios from 'axios'
 // import { FIREBASE_AUTH } from '../Authentication/Firebase'
 
 export default function LoginTodo({ navigation }) {
-  const [Name, setName] = useState(null)
-  const [password, setPassword] = useState()
-  const [email, setEmail] = useState()
+  const [Name, setName] = useState("")
+  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("")
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // to collect ant validate the inputs of data
 
@@ -38,12 +38,11 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       };
       console.log(collectData);
       console.log("Submitting...");
-    
       try {
         const response = await axios.post('https://fakestoreapi.com/users', collectData)
+        navigation.navigate('Todo')
         if (response.status === 201 || response.status === 201) {
           Alert.alert("User created successfully!")
-        navigation.navigate('Todo')
         await AsyncStorage.setItem('User', JSON.stringify(collectData))
         }else{Alert.alert("User has not been created")}
         console.log(`Data collected...`)
