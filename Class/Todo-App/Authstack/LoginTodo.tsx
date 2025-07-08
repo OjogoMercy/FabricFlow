@@ -5,10 +5,17 @@ import Button from '../../FashionApp/Components/Button'
 import Input from '@/components/textinputs'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import axios from 'axios'
-// import { createUserWithEmailAndPassword } from 'firebase/auth'
-// import { FIREBASE_AUTH } from '../Authentication/Firebase'
+import { useForm, SubmitHandler } from "react-hook-form";
+
 
 export default function LoginTodo({ navigation }) {
+  const Form = useForm<FormValues>();
+  type FormValues = {
+    email: string;
+    password: string;
+    Name:string
+  }
+
   const [Name, setName] = useState("")
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
@@ -63,30 +70,51 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return (
     <SafeAreaView style={general.container}>
       <Text style={general.down}>Register</Text>
-      <View style={{ width: '100%', marginVertical: 30, alignItems: 'center' }}>
-        <View style={general.inputcontainer}>
-          <Input placeholder={'Enter your fullname'} value={Name} onChangeText={setName} name={'FullName'} />
+      <Form>
+        <View
+          style={{ width: "100%", marginVertical: 30, alignItems: "center" }}
+        >
+          <View style={general.inputcontainer}>
+            <Input
+              placeholder={"Enter your fullname"}
+              value={Name}
+              onChangeText={setName}
+              name={"FullName"}
+            />
+          </View>
+          <View style={general.inputcontainer}>
+            <Input
+              value={email}
+              onChangeText={setEmail}
+              name={"Email"}
+              placeholder={"Enter your email"}
+            />
+          </View>
+          <View style={general.inputcontainer}>
+            <Input
+              value={password}
+              onChangeText={setPassword}
+              name={"Password"}
+              isPassword={true}
+              placeholder={"Enter your password"}
+            />
+          </View>
         </View>
-        <View style={general.inputcontainer}>
-          <Input value={email} onChangeText={setEmail} name={'Email'} placeholder={'Enter your email'} />
-        </View>
-        <View style={general.inputcontainer}>
-          <Input value={password} onChangeText={setPassword} name={'Password'} isPassword={true} placeholder={'Enter your password'}  />
-        </View>
-      </View>
+      </Form>
 
       <Button title="Sign Up" onPress={Submit} />
-      <View style={{ position: 'absolute', bottom: 20 }}>
-        <Text style={{ textAlign: 'center' }}>
+      <View style={{ position: "absolute", bottom: 20 }}>
+        <Text style={{ textAlign: "center" }}>
           Already have an Account?
           <Text
-            style={{ color: '#803A32', fontWeight: 'bold' }}
-            onPress={() => navigation.navigate('LoginScreen')}
+            style={{ color: "#803A32", fontWeight: "bold" }}
+            onPress={() => navigation.navigate("LoginScreen")}
           >
-            {' '}Sign In
+            {" "}
+            Sign In
           </Text>
         </Text>
       </View>
     </SafeAreaView>
-  )
+  );
 }

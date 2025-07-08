@@ -40,6 +40,7 @@
     "firebase": "^11.9.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.60.0",
     "react-native": "^0.79.4",
     "react-native-confirmation-code-field": "^7.6.1",
     "react-native-gesture-handler": "~2.24.0",
