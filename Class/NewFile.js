@@ -1,60 +1,3 @@
-// import { StyleSheet, Text, View,FlatList,Image } from 'react-native'
-// import React, { useEffect } from 'react'
-// import { useState } from 'react'
-
-// const name = "Favour"
-// const NewFile = () => {
-//     const resource = "https://reqres.in/api/unknown "
-//     const userData = "https://reqres.in/api/users/2"
-//     const [user, setUser] = useState([])
-
-//     const fetchUsers = async () => {
-//         fetch(resource)
-//             .then(res => res.json())
-//             .then((data) => {
-//                 console.log(data)
-//                 setUser(data.data)
-//         })
-//     }
-//     useEffect(() => {
-//        fetchUsers()
-//     },[])
-//     return (
-//     <View style={styles.page}>
-//             {/* for the products  */}
-//           <FlatList
-//               data={user}
-//               renderItem={({ item }) => {
-//                   return (
-//                       <View style={[styles.product, {backgroundColor:item.color}]}>
-//                           <Text style={{color:'white'}}>{item.name}</Text>
-//                           <Text>{ item.year}</Text>
-//                       </View>
-//                   )
-//               }}
-//             />
-//             {/* to display single user  */}
-//             <View  >
-//                 <Image source={{uri:user[0]?.avatar}} style={{height:100,width:100}} />
-
-//             </View>
-//     </View>
-//   )
-// }
-
-// export default NewFile
-
-// const styles = StyleSheet.create({
-//     page:{
-//         justifyContent:'center',
-//         flex: 1,
-//         padding:30
-//     },
-//     product: {
-//         marginVertical: 10,
-//     },
-// })
-
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -130,7 +73,8 @@ const NewFile = () => {
           return (
             <>
               <FlatList
-                data={user}
+                      data={user}
+                      numColumns={2}
                 showsVerticalScrollIndicator={false}
                 renderItem={({ item }) => {
                   return (
