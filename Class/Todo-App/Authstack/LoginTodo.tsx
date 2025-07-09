@@ -17,13 +17,14 @@ export default function LoginTodo({ navigation }) {
   const { handleSubmit, control } = useForm<FormValues>();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    console.log("Submitted data:", data);
+     console.log(" onSubmit is running");
+     console.log("Submitted data:", data);
 
     const { Name, email, password } = data;
 
     if (!Name || Name.trim().length < 3) {
       return Alert.alert("Name must be at least 3 characters");
-    }
+    }console.log("Name did not pass")
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
