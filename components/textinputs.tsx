@@ -2,9 +2,10 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import React, { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import styles from '@/navigation/constants/Styles';
+import { Controller,Control } from 'react-hook-form';
 
 const Input = ({
-  value,placeholder,onChangeText,IconName, text,
+  value,placeholder,onChangeText,IconName, text,control, name,rules={},
   isPassword = false,
 }) => {
   const [hidePassword, setHidePassword] = useState(isPassword);
@@ -17,26 +18,40 @@ const Input = ({
     <View>
       <Text>{text}</Text>
       <View style={styles.inputContainer}>
-        <Ionicons name={IconName} size={20} color="#000" style={styles.icon} />
-        <TextInput
-          value={value}
-          placeholder={placeholder}
-          secureTextEntry={isPassword ? hidePassword : false}
-          style={styles.input}
-          keyboardType='default'
-          placeholderTextColor={'#888'}
-          onChangeText={onChangeText}
+          <Ionicons
+            name={IconName}
+            size={20}
+            color="#000"
+            style={styles.icon}
         />
-        {isPassword && (
-          <TouchableOpacity onPress={togglePasswordVisibility}>
-            <Ionicons
-              name={hidePassword ? 'eye-off' : 'eye'}
-              size={20}
-              color="#777"
-              style={{ marginLeft: 8 }}
+        <Controller
+          name={name}
+          control={control}
+          rules={rules}
+          render={({ field: { onChange, value,onBlur } }) => (
+            <TextInput
+              value={value}
+              placeholder={placeholder}
+              secureTextEntry={isPassword ? hidePassword : false}
+              style={styles.input}
+              keyboardType="default"
+              placeholderTextColor={"#888"}
+              onChangeText={onChange}
+              onBlur={onBlur}
             />
-          </TouchableOpacity>
-        )}
+          )}>
+        </Controller>
+
+          {isPassword && (
+            <TouchableOpacity onPress={togglePasswordVisibility}>
+              <Ionicons
+                name={hidePassword ? "eye-off" : "eye"}
+                size={20}
+                color="#777"
+                style={{ marginLeft: 8 }}
+              />
+            </TouchableOpacity>
+          )}
       </View>
     </View>
   );
