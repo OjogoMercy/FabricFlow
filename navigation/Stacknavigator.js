@@ -19,7 +19,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackNavigator() {
   return (
-      <Stack.Navigator initialRouteName="FashionNav" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="LoginTodo" screenOptions={{headerShown: false}}>
         <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />

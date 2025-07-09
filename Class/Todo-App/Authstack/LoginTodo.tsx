@@ -9,18 +9,24 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 
 export default function LoginTodo({ navigation }) {
-  const Form = useForm<FormValues>();
+  const {register, handleSubmit} = useForm<FormValues>();
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
+    // Handle form submission logic here
+  }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   type FormValues = {
     email: string;
     password: string;
     Name:string
   }
 
-  const [Name, setName] = useState("")
-  const [password, setPassword] = useState("")
-  const [email, setEmail] = useState("")
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // to collect ant validate the inputs of data
+//   const [Name, setName] = useState("")
+//   const [password, setPassword] = useState("")
+//   const [email, setEmail] = useState("")
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   // to collect ant validate the inputs of data
 
   const Submit = async () => {
     if (!Name.trim()) {
@@ -70,37 +76,41 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return (
     <SafeAreaView style={general.container}>
       <Text style={general.down}>Register</Text>
-      <Form>
         <View
+          onSubmit={handleSubmit(onSubmit)}
           style={{ width: "100%", marginVertical: 30, alignItems: "center" }}
         >
           <View style={general.inputcontainer}>
             <Input
               placeholder={"Enter your fullname"}
-              value={Name}
-              onChangeText={setName}
-              name={"FullName"}
+              text={"Name"}
+              {...register("Name", {
+                required: true,
+                minLength: 3,
+                maxLength: 15,
+              })}
             />
           </View>
           <View style={general.inputcontainer}>
             <Input
-              value={email}
-              onChangeText={setEmail}
-              name={"Email"}
               placeholder={"Enter your email"}
+              text={"Email"}
+              {...register("email", { required: true, pattern: emailRegex })}
             />
           </View>
           <View style={general.inputcontainer}>
             <Input
-              value={password}
-              onChangeText={setPassword}
-              name={"Password"}
+              {...register("password", {
+                required: true,
+                minLength: 5,
+                maxLength: 15,
+              })}
+              text={"Password"}
               isPassword={true}
               placeholder={"Enter your password"}
             />
           </View>
         </View>
-      </Form>
 
       <Button title="Sign Up" onPress={Submit} />
       <View style={{ position: "absolute", bottom: 20 }}>
