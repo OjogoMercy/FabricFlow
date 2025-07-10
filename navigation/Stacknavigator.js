@@ -19,8 +19,8 @@ const Stack = createNativeStackNavigator();
 
 export default function StackNavigator() {
   return (
-      <Stack.Navigator initialRouteName="LoginTodo" screenOptions={{headerShown: false}}>
-        <Stack.Screen name="SignUp" component={SignUp}/>
+      <Stack.Navigator initialRouteName="FashionNav" screenOptions={{headerShown: false}}>
+        {/* <Stack.Screen name="SignUp" component={SignUp}/> */}
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Flexbox" component={Flexbox} />
         <Stack.Screen name="Index" component={Index} />
@@ -34,7 +34,7 @@ export default function StackNavigator() {
         {/* Fashion App */}
         <Stack.Screen name="Twitter" component={Twitter} />
         <Stack.Screen name="Todo" component={Todo} />
-        <Stack.Screen name="LoginTodo" component={LoginTodo} />
+        {/* <Stack.Screen name="LoginTodo" component={LoginTodo} /> */}
         <Stack.Screen name="NewFile" component={NewFile} />
       </Stack.Navigator>
   );

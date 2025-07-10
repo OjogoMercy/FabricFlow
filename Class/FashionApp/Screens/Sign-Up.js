@@ -1,4 +1,4 @@
-import {Text, View , TextInput,SafeAreaView,ScrollView, KeyboardAvoidingView} from 'react-native'
+import {Text, View , TextInput,SafeAreaView,ScrollView, KeyboardAvoidingView,Alert} from 'react-native'
 import React, { useState } from 'react'
 import general from '../Constants/General'
 import Button from '../Components/Button'
@@ -35,23 +35,23 @@ const Signup = ({ navigation }) => {
       };
       console.log(collectData);
       console.log("Submitting...");
-      try {
-        const response = await axios.post(
-          "https://fakestoreapi.com/users",
-          collectData
-        );
-        navigation.navigate("Todo");
-        if (response.status === 201 || response.status === 201) {
-          Alert.alert("User created successfully!");
-          await AsyncStorage.setItem("User", JSON.stringify(collectData));
-        } else {
-          Alert.alert("User has not been created");
-        }
-        console.log(`Data collected...`);
-      } catch (error) {
-        Alert.alert("Failed to save user data");
-        console.log("Error when saaing user data");
-      }
+      // try {
+      //   const response = await axios.post(
+      //     "https://fakestoreapi.com/users",
+      //     collectData
+      //   );
+        navigation.navigate("Homescreen");
+      //   if (response.status === 400 || response.status === 201) {
+      //     Alert.alert("User created successfully!");
+      //     await AsyncStorage.setItem("User", JSON.stringify(collectData));
+      //   } else {
+      //     Alert.alert("User has not been created");
+      //   }
+      //   console.log(`Data collected...`);
+      // } catch (error) {
+      //   Alert.alert("Failed to save user data");
+      //   console.log("Error when saaing user data");
+      // }
     }
   };
   const fetchData = async () => {
@@ -108,3 +108,4 @@ const Signup = ({ navigation }) => {
     </SafeAreaView>
   );
 }
+export default Signup;

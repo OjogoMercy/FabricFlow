@@ -17,6 +17,7 @@ const Input = ({
   name,
   rules = {},
   isPassword = false,
+  value,onChangeText
 }) => {
   const [hidePassword, setHidePassword] = useState(isPassword);
 
@@ -37,24 +38,24 @@ const Input = ({
           />
         )}
 
-        <Controller
+        {/* <Controller
           name={name}
           control={control}
           rules={rules}
-          render={({ field: { onChange, value, onBlur } }) => (
+          render={({ field: { onChange, value, onBlur } }) => ( */}
             <TextInput
-              value={value ?? ""} // prevents substring/length errors
+              value={value} // prevents substring/length errors
               placeholder={placeholder}
               secureTextEntry={isPassword ? hidePassword : false}
               style={styles.input}
               keyboardType="default"
               placeholderTextColor="#888"
-              onChangeText={onChange}
-              onBlur={onBlur}
+              onChangeText={onChangeText}
+              // onBlur={onBlur}
               autoCapitalize="none"
             />
-          )}
-        />
+          {/* )}
+        /> */}
 
         {isPassword && (
           <TouchableOpacity onPress={togglePasswordVisibility}>

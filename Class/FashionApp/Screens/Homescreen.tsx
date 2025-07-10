@@ -74,27 +74,26 @@ const Homescreen = ({navigation}) => {
     );
   };
   return (
-    <SafeAreaView style={[general.container1 ,{paddingHorizontal:15}]}>
-        <View style={general.row}>
-        <View style={{alignItems:'flex-start',width:'50%'}}>
-        <Text style={{fontSize:20, color:Colors.text,fontWeight:'bold'}}>Welcome Back!</Text>
-        <Text style={{fontSize:14,fontWeight:'bold',marginLeft:10}}>Ojogo Mercy</Text>
+      <><StatusBar backgroundColor={"#f2f2f2"} barStyle={'dark-content'} /><SafeAreaView style={[general.container1, { paddingHorizontal: 15, backgroundColor: "#f2f2f2" }]}>
+      <View style={general.row}>
+        <View style={{ alignItems: 'flex-start', width: '50%' }}>
+          <Text style={{ fontSize: 20, color: Colors.text, fontWeight: 'bold' }}>Welcome Back!</Text>
+          <Text style={{ fontSize: 14, fontWeight: 'bold', }}>Ojogo Mercy</Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Sheet')}>
-              <Ionicons name='notifications' size={20} color={Colors.primary}/>
+          <Ionicons name='notifications' size={20} color={Colors.primary} />
         </TouchableOpacity>
-      
-        </View>
-       <View style={general.search}>
-        <Ionicons name='search' size={20} color={'gray'}/>
+
+      </View>
+      <View style={general.search}>
+        <Ionicons name='search' size={20} color={'gray'} />
         <TextInput
-        placeholder='Search'
-        placeholderTextColor={'gray'}
-        style={{width:'80%'}}
-        />
-        <Ionicons name='mic' size={20} color={'gray'}/>
-       </View>
-    <FlatList
+          placeholder='Search'
+          placeholderTextColor={'gray'}
+          style={{ width: '80%' }} />
+        <Ionicons name='mic' size={20} color={'gray'} />
+      </View>
+      <FlatList
         data={products}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
@@ -103,9 +102,8 @@ const Homescreen = ({navigation}) => {
         }}
         numColumns={2}
         showsVerticalScrollIndicator={false}
-        ListHeaderComponent={ Header}
-      />   
-    </SafeAreaView>
+        ListHeaderComponent={Header} />
+    </SafeAreaView></>
   )
 }
 
