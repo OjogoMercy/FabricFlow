@@ -1,9 +1,16 @@
-import {Text, View , TextInput,SafeAreaView,ScrollView, KeyboardAvoidingView,Alert} from 'react-native'
-import React, { useState } from 'react'
-import general from '../Constants/General'
-import Button from '../Components/Button'
-import Input from '@/components/textinputs'
-
+import {
+  Text,
+  View,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  KeyboardAvoidingView,
+  Alert,
+} from "react-native";
+import React, { useState } from "react";
+import general from "../Constants/General";
+import Button from "../Components/Button";
+import Input from "@/components/textinputs";
 
 const Signup = ({ navigation }) => {
   const [Name, setName] = useState("");
@@ -11,7 +18,7 @@ const Signup = ({ navigation }) => {
   const [email, setEmail] = useState("");
   // to validate the email input
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
+
   // to collect ant validate the inputs of data
   const Submit = async () => {
     if (!Name.trim()) {
@@ -40,7 +47,7 @@ const Signup = ({ navigation }) => {
       //     "https://fakestoreapi.com/users",
       //     collectData
       //   );
-        navigation.navigate("Homescreen");
+      navigation.navigate("Bottomtab");
       //   if (response.status === 400 || response.status === 201) {
       //     Alert.alert("User created successfully!");
       //     await AsyncStorage.setItem("User", JSON.stringify(collectData));
@@ -98,7 +105,7 @@ const Signup = ({ navigation }) => {
           Already have an Account?
           <Text
             style={{ color: "#803A32", fontWeight: "bold" }}
-            onPress={() => navigation.navigate("LoginScreen")}
+            onPress={() => navigation.navigate("Sign")}
           >
             {" "}
             Sign In
@@ -107,5 +114,5 @@ const Signup = ({ navigation }) => {
       </View>
     </SafeAreaView>
   );
-}
+};
 export default Signup;
