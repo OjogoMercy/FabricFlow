@@ -6,10 +6,6 @@ export let Tasks = [
   { id: 3, text: "Read a book", liked: false, mark: false, pending: true },
 ];
 
-const Task = [
-  {id:1, text:'text'}
-]
-
 export const getTasks = () => [...Tasks];
 // to toggle the like
 export function toggleLike(id) {
