@@ -1,7 +1,7 @@
 import { View, Text, TextInput ,StyleSheet,FlatList,TouchableOpacity, StatusBar, KeyboardAvoidingView } from 'react-native'
 import React,{useEffect, useState} from 'react'
 import { Ionicons } from '@expo/vector-icons'
-import {Tasks, addTask, removeAllTasks,getTasks,toggleLike,removeTask} from './Todojavasctipt'
+import {Tasks, addTask, removeAllTasks,getTasks,toggleLike,removeTask} from './TodoJavascript'
 import Theme from './Constants/Colors'
 import { styles } from './Constants/Styles'
 import AsyncStorage from '@react-native-async-storage/async-storage'
