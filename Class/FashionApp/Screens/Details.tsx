@@ -34,7 +34,7 @@ export default function Details({route,navigation}) {
           <View style={general.float1}>
             <Ionicons name="heart" size={20} color={Colors.primary} />
           </View>
-        </View>
+        </View> 
         <View style={{ flexDirection: 'row', padding: 10 ,justifyContent:'space-between'}}>
             <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{item.name}</Text>
             <View style={general.contain}>
