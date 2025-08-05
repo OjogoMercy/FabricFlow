@@ -12,7 +12,7 @@ export default function Todo() {
   const theme = darkMode ? Theme.darkTheme : Theme.lightTheme;
 
   // to store tasks in AsyncStorage
-  const storeTasks = async (value) => {
+  const storeTasks = async (value: { id: number; text: string; liked: boolean; mark: boolean; pending: boolean }[]) => {
     try { 
       const jsonValue = JSON.stringify(value);
       await AsyncStorage.setItem('my-Tasks',jsonValue)
@@ -53,10 +53,10 @@ export default function Todo() {
     setTaskText('');
   }
 };
-// const handleDeleteTask = (taskId) => {
-//   const updatedTasks = tasks.filter(task => task.id !== taskId); 
-//   setTasks(updatedTasks);
-// };
+const handleDeleteTask = (taskId) => {
+  const updatedTasks = tasks.filter(task => task.id !== taskId); 
+  setTasks(updatedTasks);
+};
 const removeTaskbutton = (taskId) => {
   const updatedTasks = removeTask(taskId);
   setTasks(updatedTasks)
